@@ -1,0 +1,16 @@
+/* Volunteer Signup Section */
+.volunteer-signup {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.volunteer-signup h2 {
+    color: #4FC3F7; /* Soft blue */
+}
+
+.volunteer-signup p {
+    font-size: 1.2rem;
+    color: #555;
+    width: 70%;
+    margin: 0 auto;
+}

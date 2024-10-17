@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff5e6; /* Soft background color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a3b5d;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1a3b5d;
+    position: relative;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #ff6b6b; /* Change color on hover */
+}
+
+.login-register {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.login-register:hover {
+    background-color: #ff4b4b; /* Darker shade on hover */
+}
+
+.hero {
+    background-image: url('1st.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Added horizontal padding for smaller screens */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.feature {
+    text-align: center;
+    flex: 1; /* Equal width for features */
+    min-width: 150px; /* Minimum width for smaller screens */
+}
+
+.feature img {
+    width: 120px;
+    height: 90px;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s; /* Smooth scaling transition */
+}
+
+.feature img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.main-content {
+    text-align: center;
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.main-content img {
+    width: 100%; /* Responsive width */
+    max-width: 600px; /* Max width to keep the image size in check */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners for the image */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for the image */
+}
+
+.content-text {
+    margin-top: 20px; /* Space between the image and the text */
+}
+
+.btn {
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded button corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.testimonial {
+    background-color: #f0f0f0;
+    padding: 50px 20px; /* Added horizontal padding */
+    text-align: center;
+}
+
+.testimonial-item {
+    display: none;
+}
+
+.testimonial-item.active {
+    display: block; /* Show active testimonial */
+}
+
+.testimonial q {
+    font-style: italic;
+    font-size: 18px;
+    display: block; /* Added block display for better spacing */
+    margin: 20px 0; /* Margin around the quote */
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #1a3b5d;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0; /* Remove margin for better alignment */
+}
+
+/* Dropdown styling */
+.services-dropdown {
+    position: relative;
+}
+
+.services-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.services-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.services-dropdown .dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    color: #1a3b5d;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.services-dropdown .dropdown-content a:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}

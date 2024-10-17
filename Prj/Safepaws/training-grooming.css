@@ -1,0 +1,17 @@
+/* Training & Grooming Section */
+.training-grooming {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.training-grooming h2 {
+    font-size: 2rem;
+    color: #444;
+}
+
+.training-grooming p {
+    font-size: 1.2rem;
+    width: 70%;
+    margin: 0 auto;
+    color: #555;
+}

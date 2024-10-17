@@ -1,0 +1,52 @@
+/* Volunteer Section */
+.volunteer {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #FFF6E5; /* Consistent background color */
+}
+
+.volunteer h2 {
+    color: #E95B47; /* Coral color for headings */
+    font-size: 2.5rem; /* Emphasized font size */
+}
+
+.volunteer p {
+    font-size: 1.2rem;
+    color: #555; /* Darker grey for readability */
+    width: 70%; /* Limit width for better layout */
+    margin: 20px auto; /* Center align with margin */
+}
+
+/* Volunteer Cards for Opportunities */
+.volunteer-card {
+    background: #FFFFFF; /* White background for cards */
+    border: 1px solid #E0E0E0; /* Light border */
+    padding: 20px; /* Padding inside cards */
+    margin: 15px; /* Margin between cards */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.volunteer-card h3 {
+    color: #062D3E; /* Dark color for card headings */
+    font-size: 1.5rem; /* Larger font for headings */
+}
+
+.volunteer-card p {
+    color: #555; /* Dark grey for card text */
+}
+
+/* Call to Action Button Specific to Volunteer Page */
+.cta-button {
+    background-color: #4FC3F7; /* Soft blue for CTA buttons */
+    padding: 12px 24px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* White text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block for better layout */
+    margin-top: 20px; /* Space above the button */
+}
+
+.cta-button:hover {
+    background-color: #29B6F6; /* Slightly darker blue on hover */
+}

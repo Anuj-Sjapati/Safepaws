@@ -1,0 +1,19 @@
+/* Join Section */
+.join {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.join h2 {
+    font-size: 2rem;
+    color: #444;
+}
+
+.join p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.join .cta-button {
+    margin-top: 20px; /* Add margin for spacing */
+}

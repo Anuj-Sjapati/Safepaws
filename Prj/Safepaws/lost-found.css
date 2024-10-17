@@ -1,0 +1,15 @@
+/* Lost & Found Section */
+.lost-found {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.lost-found h2 {
+    font-size: 2rem;
+    color: #444;
+}
+
+.lost-found p {
+    font-size: 1.2rem;
+    color: #555;
+}

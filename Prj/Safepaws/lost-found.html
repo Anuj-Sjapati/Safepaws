@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found Pets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lost-found.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>SafePaws</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="adoption.html">Adoption</a></li>
+                <li><a href="training-grooming.html">Training & Grooming</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Report a Lost Pet</h2>
+        <form id="lost-pet-form">
+            <div class="form-group">
+                <label for="pet-type">Pet Type:</label>
+                <select id="pet-type" name="pet-type" required>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pet-name">Pet Name:</label>
+                <input type="text" id="pet-name" name="pet-name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="last-seen">Last Seen Location:</label>
+                <input type="text" id="last-seen" name="last-seen" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-info">Your Contact Information:</label>
+                <input type="text" id="contact-info" name="contact-info" required>
+            </div>
+            <div class="form-group">
+                <label for="additional-info">Additional Information:</label>
+                <textarea id="additional-info" name="additional-info" rows="4"></textarea>
+            </div>
+            <button type="submit" class="cta-button">Submit Report</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Found Pets</h2>
+        <div class="found-pet-list">
+            <div class="found-pet-card">
+                <h3>Dog - Max</h3>
+                <p>Description: Brown Labrador, friendly and approachable.</p>
+                <p>Location Found: Central Park</p>
+                <p>Contact: owner@example.com</p>
+            </div>
+            <div class="found-pet-card">
+                <h3>Cat - Whiskers</h3>
+                <p>Description: Grey tabby with green eyes.</p>
+                <p>Location Found: Maple Street</p>
+                <p>Contact: owner@example.com</p>
+            </div>
+            <!-- More found pets can be added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SafePaws. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

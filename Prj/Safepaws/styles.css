@@ -1,0 +1,97 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* General Layout */
+body {
+    color: #062D3E; /* Updated text color for better contrast */
+    line-height: 1.6;
+    background-color: #FFF6E5; /* Consistent background color */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: #FFF6E5;
+    color: #062D3E;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #062D3E;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    background-color: #E95B47; /* Coral for buttons */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: auto;
+    position: relative; /* Necessary for z-index to take effect */
+    z-index: 10; /* Bring it above other elements */
+}
+
+.cta-button:hover {
+    background-color: #E95B47; /* Maintain button color on hover */
+}
+
+/* Footer */
+footer {
+    background: #95dcff; /* Blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #FFD54F; /* Yellow hover effect */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        margin-top: 15px;
+    }
+}

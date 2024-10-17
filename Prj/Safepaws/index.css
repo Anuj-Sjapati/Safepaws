@@ -1,0 +1,169 @@
+/* Header */
+header {
+    background: #FFF6E5;
+    color: #062D3E;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #062D3E;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    background-color: #E95B47; /* Coral for buttons */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: auto;
+    position: relative; /* Necessary for z-index to take effect */
+    z-index: 10; /* Bring it above other elements */
+}
+
+.cta-button:hover {
+    background-color: #E95B47; /* Maintain button color on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: url('pikaso_embed.png') no-repeat center center/cover;
+    color: white;
+    padding: 0; /* Removed padding to ensure no gap */
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: #062D3E;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    color: #F29301;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #062D3E;
+}
+
+.hero .cta-button {
+    background-color: #FF6F61;
+    padding: 12px 24px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.hero .cta-button:hover {
+    background-color: #FF8A75;
+}
+
+/* About Section */
+.about {
+    background: #EFEFEF; /* Light grey background */
+    padding: 50px 0; /* Keep padding for spacing */
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.about p {
+    font-size: 1.2rem;
+    width: 70%;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.service-card {
+    background: #FFF; /* White background for service cards */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Call to Action Section */
+.call-to-action {
+    background: #FF6F61; /* Coral */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    font-size: 2rem;
+}
+
+.call-to-action p {
+    margin: 20px 0;
+}
+
+/* Footer */
+footer {
+    background: #95dcff; /* Blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #FFD54F; /* Yellow hover effect */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        margin-top: 15px;
+    }
+}

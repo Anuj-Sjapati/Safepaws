@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafePaws - Animal Welfare System</title>
     <link rel="stylesheet" href="ad.css">
-    <link rel="stylesheet" href="styles.css"> <!-- You can keep your CSS here -->
+    <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -21,14 +21,15 @@
                             <li><a href="#">Adoption</a></li>
                             <li><a href="#">Training & Grooming</a></li>
                             <li><a href="#">Vet Support</a></li>
-                            <li><a href="#">Pet Training</a></li>
+        
                         </ul>
                     </li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Donate</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-                <a href="#" class="login-register">Login/Register</a>
+                <!-- <a href="#" class="login-register">Login/Register</a> -->
+                <button id="sign-up-button">SignUp / LogIn </button>
             </nav>
         </div>
     </header>
@@ -126,10 +127,91 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Information</h3>
+                <p>Address: Kathmandu, Nepal</p>
+                <p>Phone: (+977) 9812345678 </p>
+                <p>Email: <a href="mailto:#">info@safepaws.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2024 SafePaws. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Signup Popup Modal -->
+    <div id="signup-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div id="signup-form-container" class="form-container">
+                <h2 class="signuph2">Sign Up</h2>
+                <form id="signup-form">
+                    <div>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <div id="password-error" class="error-message"></div>
+                    <div>
+                        <input type="submit" value="Signup">
+                    </div>
+                    <div class="or-line"></div>
+                    <label>Have an account?</label> <a href="#" id="switch-to-login">Log In</a>
+                    <br>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </form>
+            </div>
+            <div id="login-form-container" class="form-container hidden">
+                <h2 class="signuph2">Log In</h2>
+                <form id="login-form">
+                    <div>
+                        <input type="email" id="login-email" name="login-email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input type="password" id="login-password" name="login-password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Log In">
+                    </div>
+                    <div class="or-line"></div>
+                    <label>Don't have an account?</label> <a href="#" id="switch-to-signup">Sign Up</a>
+                    <br>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </form>
+            </div>
+        </div>
+        <script src="ad.js"></script>
+    </div>
 
     <!-- Link to the external JavaScript file -->
     <script src="ad.js"></script>

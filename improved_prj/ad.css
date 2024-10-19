@@ -47,20 +47,6 @@ nav ul li a:hover {
     color: #ff6b6b; /* Change color on hover */
 }
 
-/* .login-register {
-    background-color: #ff6b6b;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s; /* Smooth background color transition */
-/*}*/
-
-/*.login-register:hover {
-    background-color: #ff4b4b; /* Darker shade on hover */
-/* } */
-
 /* Button of signup/login */
 button{ display: block;
     padding: 10px 20px;

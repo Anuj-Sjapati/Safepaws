@@ -224,7 +224,7 @@ nav ul li a:hover {
 /* Responsive styles */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 36px; /* Adjust heading size for smaller screens */
+        font-size: 36px; /* Adjusted for smaller size screen */    /*Don't know will work or not */
     }
     
     .hero p {

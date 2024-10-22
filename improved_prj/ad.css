@@ -1,8 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
+/* General styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fff5e6; /* Soft background color */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5e6; /* Primary background color */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+/* General header styles */
+header {
+    background-color: #1a3b5d;
+    padding: 1rem 0;
 }
 
 .container {
@@ -11,43 +25,96 @@ body {
     padding: 0 20px;
 }
 
-header {
-    background-color: #ffffff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
-}
-
-.logo {
-    text-decoration: none;
-}
-
-.logo img {
-    height: 100px; /* Logo height */
-}
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
-    list-style-type: none;
+/* Logo image */
+.logo-img {
+    height: 50px;
+}
+
+/* Navigation Links */
+.nav-links {
     display: flex;
-    gap: 20px;
+    list-style: none;
 }
 
-nav ul li a {
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
     text-decoration: none;
-    color: #1a3b5d;
+    font-weight: bold;
     position: relative;
-    transition: color 0.3s; /* Smooth color transition */
 }
 
-nav ul li a:hover {
-    color: #ff6b6b; /* Change color on hover */
+/* Dropdown Menu */
+.services-dropdown {
+    position: relative;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #333;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* padding: 0.5rem 0; */
+    z-index: 1000;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Show dropdown on hover */
+.services-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* SignUp / LogIn Button */
+#sign-up-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#sign-up-button:hover {
+    background-color: #ff4b4b;
+    color: #fff;
+}
+
+/* hero section*/
 .hero {
     background-image: url('1st.jpeg');
     background-size: cover;
@@ -81,6 +148,12 @@ nav ul li a:hover {
     min-width: 150px; /* Minimum width for smaller screens */
 }
 
+.features h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
 .feature img {
     width: 260px;
     height: 180px;
@@ -92,38 +165,60 @@ nav ul li a:hover {
     transform: scale(1.1); /* Scale up on hover */
 }
 
-.main-content {
+
+/* How It Works Section */
+.how-it-works {
+    padding: 50px 20px;
+    background-color: fff5e6;
     text-align: center;
-    margin: 20px 0; /* Add margin for spacing */
 }
 
-.main-content img {
-    width: 100%; /* Responsive width */
-    max-width: 600px; /* Max width to keep the image size in check */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: rounded corners for the image */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for the image */
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-.content-text {
-    margin-top: 20px; /* Space between the image and the text */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.btn {
-    background-color: #007BFF; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    text-decoration: none; /* Remove underline from link */
-    border-radius: 5px; /* Rounded button corners */
-    transition: background-color 0.3s; /* Smooth background color transition */
+.step {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
 }
 
-.btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.step:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
+
+.step-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #666;
+    font-size: 16px;
+}
+
 
 .testimonial {
-    background-color: #f0f0f0;
+    background-color: #ff6b6b;
     padding: 50px 20px; /* Added horizontal padding */
     text-align: center;
 }
@@ -143,83 +238,11 @@ nav ul li a:hover {
     margin: 20px 0; /* Margin around the quote */
 }
 
-.stars {
-    color: #ffd700;
-    font-size: 24px;
-    margin-top: 10px;
-}
 
-/* Dropdown styling */
-.services-dropdown {
-    position: relative;
-}
 
-.services-dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 160px;
-    z-index: 1;
-}
 
-.services-dropdown:hover .dropdown-content {
-    display: block;
-}
 
-.services-dropdown .dropdown-content a {
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-    color: #1a3b5d;
-    transition: background-color 0.3s; /* Smooth background color transition */
-}
 
-.services-dropdown .dropdown-content a:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
-}
-
-/* Modal styling */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Error message styling */
-.error-message {
-    color: red;
-    font-size: 14px;
-}
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -248,3 +271,19 @@ a:hover {
     text-decoration: none; /* No underline on hover either */
 }
 
+/* Responsive Styles for nav */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}

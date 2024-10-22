@@ -137,6 +137,12 @@ input[type="submit"]:hover {
     
 }
 
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
 /* switch to signup/login */
 
 #switch-to-login{text-decoration: none; color: black;}

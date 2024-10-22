@@ -154,7 +154,7 @@ nav {
 .features h2 {
     text-align: center;
     font-size: 2.5rem; /* Increased font size for emphasis */
-    margin: 2rem auto; /* Centering with auto margins */
+    margin-bottom: 2rem auto; /* Centering with auto margins */
     color: #1a3b5d; /* Color to match your brand */
     max-width: 600px; /* Optional: set a max width for better readability */
 }
@@ -171,6 +171,11 @@ nav {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
+.feature-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;}
 
 
 /* How It Works Section */

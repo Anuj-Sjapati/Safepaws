@@ -141,7 +141,7 @@ nav {
     text-align: center;
     flex: 1; /* Equal width for features */
     min-width: 150px; /* Minimum width for smaller screens */
-    margin: 1rem; /* Add some margin for spacing */
+    margin: 2rem; /* Add some margin for spacing */
     color: #1a3b5d;
 }
 
@@ -149,6 +149,7 @@ nav {
     display: flex; /* Ensure features are in a row */
     flex-wrap: wrap; /* Wrap to next line on smaller screens */
     justify-content: center; /* Center the features */
+    padding: 50px 0px;
 }
 
 .features h2 {

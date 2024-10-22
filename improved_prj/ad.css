@@ -135,35 +135,42 @@ nav {
     margin: 0 auto;
 }
 
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 0;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
 
+/* feature section */
 .feature {
     text-align: center;
     flex: 1; /* Equal width for features */
     min-width: 150px; /* Minimum width for smaller screens */
+    margin: 1rem; /* Add some margin for spacing */
+    color: #1a3b5d;
+}
+
+.features {
+    display: flex; /* Ensure features are in a row */
+    flex-wrap: wrap; /* Wrap to next line on smaller screens */
+    justify-content: center; /* Center the features */
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem; /* Increased font size for emphasis */
+    margin: 2rem auto; /* Centering with auto margins */
+    color: #1a3b5d; /* Color to match your brand */
+    max-width: 600px; /* Optional: set a max width for better readability */
 }
 
 .feature img {
     width: 260px;
     height: 180px;
     border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s; /* Smooth scaling transition */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow transition */
 }
 
 .feature img:hover {
     transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
+
 
 
 /* How It Works Section */
@@ -171,12 +178,13 @@ nav {
     padding: 50px 20px;
     background-color: fff5e6;
     text-align: center;
+    color: #1a3b5d;
 }
 
 .how-it-works h2 {
     font-size: 36px;
     margin-bottom: 30px;
-    color: #333;
+    color: #1a3b5d;
 }
 
 .steps {
@@ -221,6 +229,7 @@ nav {
     background-color: #ff6b6b;
     padding: 50px 20px; /* Added horizontal padding */
     text-align: center;
+    color: #1a3b5d;
 }
 
 .testimonial-item {
@@ -237,11 +246,6 @@ nav {
     display: block; /* Added block display for better spacing */
     margin: 20px 0; /* Margin around the quote */
 }
-
-
-
-
-
 
 
 /* Responsive styles */

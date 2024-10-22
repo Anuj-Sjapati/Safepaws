@@ -192,6 +192,10 @@ nav {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
+.feature:hover{
+    color: #ff6b6b;
+}
+
 .feature-container{
     display: flex;
     justify-content: center;
@@ -232,7 +236,7 @@ nav {
 }
 
 .step:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .step-icon {
@@ -296,10 +300,10 @@ a {
 }
 
 /* Change color on hover for a more interactive effect */
-a:hover {
-    color: #ff6b6b; /* Choose a color for the hover state */
-    text-decoration: none; /* No underline on hover either */
-}
+/* a:hover {
+    color: #ff6b6b; /* Choose a color for the hover state 
+    text-decoration: none; /* No underline on hover either 
+} */
 
 /* Responsive Styles for nav */
 @media (max-width: 768px) {

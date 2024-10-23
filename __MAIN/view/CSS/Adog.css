@@ -1,0 +1,46 @@
+/* Adog.css */
+
+.adoption-section {
+    padding: 20px; /* Add padding around the section */
+}
+
+.adoption-list {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Space out items evenly */
+    margin-bottom: 50px; /* Add margin to create space for the footer */
+}
+
+.adoption-item {
+    flex: 1; /* Allow items to grow and fill available space equally */
+    max-width: 30%; /* Limit the maximum width of each item */
+    margin: 0 10px; /* Add margin between items */
+    position: relative; /* For absolute positioning of text */
+}
+
+.item-container {
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+    text-align: center; /* Center text */
+    transition: transform 0.3s; /* Smooth transition for pop-up effect */
+}
+
+.item-container:hover {
+    transform: scale(1.05); /* Scale up the item on hover */
+}
+
+/* Set fixed dimensions for images */
+.item-container img {
+    width: 100%; /* Fill the container width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    display: block;
+}
+
+.item-container h2 {
+    position: relative;
+    bottom: 10px; /* Position text at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center text */
+    padding: 5px;
+   
+}

@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt - SafePaws</title>
-    <link rel="stylesheet" href="nav.css"> <!--  nav css -->
-    <link rel="stylesheet" href="report.css"> <!--main css-->
-    <link rel="stylesheet" href="signin_login.css"> <!-- form css -->
-    <link rel="stylesheet" href="footer.css"> <!--footer css-->
-    <link rel="icon" type="imge/jpg" href="icon.png"> <!-- favicons tab icon -->
+    <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
+    <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
+    <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
+    <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,9 +17,8 @@
             <nav>
                 <!-- Logo Section -->
                 <a href="ad.html" class="logo">
-                    <img src="LOGO_SafePaws.png" alt="SafePaws Logo" class="logo-img">
+                    <img src="../Images/LOGO_SafePaws.png" alt="SafePaws Logo" class="logo-img">
                 </a>
-    
                 <!-- Navigation Links -->
                 <ul class="nav-links">
                     <li><a href="ad.html">Home</a></li>
@@ -44,60 +42,7 @@
         </div>
     </header>
 
-    <!-- main module for report -->
-
-    <main>
-        <section class="report-pet">
-            <h1>Report a Lost Pet</h1>
-            <div class="report-info">
-                <h2>Help Us Find Your Lost Pet</h2>
-                <p>If your pet is missing, please provide the following details to assist in locating and reuniting you with your beloved companion.</p>
-            </div>
-    
-            <div class="report-form">
-                <h2>Lost Pet Report Form</h2>
-                <form id="report-pet-form" enctype="multipart/form-data">
-                    <div>
-                        <label for="pet-type">Pet Type:</label>
-                        <select id="pet-type" name="pet-type" required>
-                            <option value="" disabled selected>Select Pet Type</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="pet-name">Pet Name:</label>
-                        <input type="text" id="pet-name" name="pet-name" placeholder="Pet's Name" required>
-                    </div>
-                    <div>
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" placeholder="Describe the pet (e.g., color, size, breed)" rows="4" required></textarea>
-                    </div>
-                    <div>
-                        <label for="last-seen">Last Seen Location:</label>
-                        <input type="text" id="last-seen" name="last-seen" placeholder="Where was the pet last seen?" required>
-                    </div>
-                    <div>
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="phone">Your Phone:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-                    </div>
-                    <div>
-                        <label for="photo">Attach a Photo:</label>
-                        <input type="file" id="photo" name="photo" accept="image/*" required>
-                    </div>
-                    <div>
-                        <input type="submit" value="Submit Report">
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    
+<h1>Grooming & Training section will be added</h1>
 
     <!-- footer section -->
     <footer>
@@ -183,7 +128,7 @@
                 </form>
             </div>
         </div>
-        <script src="signin_login.js"></script>
+        <script src="../Js/signin_login.js"></script>
     </div>
 </body>
 </html>

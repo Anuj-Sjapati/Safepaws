@@ -1,7 +1,7 @@
 
 /* hero section top*/
 .hero {
-    background-image: url('1st.jpeg');
+    background-image: url('../Images/1st.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -22,7 +22,7 @@
 
 /* hero section bottom */
 .hero-bottom {
-    background-image: url('6th.jpg');
+    background-image: url('../Images/6th.jpg');
     background-size: cover;
     background-position: center;
     color: white;

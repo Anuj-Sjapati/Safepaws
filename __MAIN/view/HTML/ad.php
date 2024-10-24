@@ -41,7 +41,17 @@
                 </ul>
     
                 <!-- SignUp / LogIn Button -->
+                <!-- Check if the user is logged in -->
+                <?php if (isset($_SESSION['username'])): ?>
+                <!-- If the user is logged in, show their username and a logout button -->
+                <button id="sign-up--button"><?php echo $_SESSION['username']; ?></button>
+                <form action="../../modal/logout.php" method="POST">
+                    <button type="submit">Logout</button>
+                </form>
+                <?php else: ?>
+                <!-- If the user is not logged in, show the signup/login button -->
                 <button id="sign-up-button">SignUp / LogIn</button>
+                <?php endif; ?>
             </nav>
         </div>
     </header>
@@ -216,7 +226,7 @@
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
                 <h2 class="signuph2">Sign Up</h2>
-                <form id="signup-form">
+                <form id="signup-form" method="POST" action="insert_user_db.php">
                     <div>
                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
@@ -245,7 +255,7 @@
             </div>
             <div id="login-form-container" class="form-container hidden">
                 <h2 class="signuph2">Log In</h2>
-                <form id="login-form">
+                <form id="login-form" method="POST" action="../../modal/check_user_db.php">
                     <div>
                         <input type="email" id="login-email" name="login-email" placeholder="Email" required>
                     </div>

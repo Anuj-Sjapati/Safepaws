@@ -28,7 +28,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         return;
     }
 
-    window.location.href = 'idea2.1.html';
+    window.location.href = 'ad.html';
 });
 
 function highlightPasswords() {

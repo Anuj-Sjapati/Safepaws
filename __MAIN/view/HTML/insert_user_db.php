@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];     // Username entered in the form
     $email = $_POST['email'];           // Email entered in the form
     $phone = $_POST['phone'];           // Phone number entered in the form
-    $password = $_POST['password'];     // Password entered in the form
+    $password = $_POST['upassword'];     // Password entered in the form
 
     // Write the SQL query to insert the form data into the 'users' table
     $sql = "INSERT INTO users (username, email, phone, upassword) VALUES ('$username', '$email', '$phone', '$password')";

@@ -234,7 +234,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" id="password" name="upassword" placeholder="Password" required>
                     </div>
                     <div>
                         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $loginPassword = $_POST['login-password']; // Password entered in the form
 
     // Prepare the SQL query to find the user by email
-    $sql = "SELECT password, username FROM users WHERE email = '$loginEmail'";
+    $sql = "SELECT upassword, username FROM users WHERE email = '$loginEmail'";
 
     // Execute the query
     $result = $conn->query($sql);
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Fetch the user's data
         $row = $result->fetch_assoc(); // Get the user data
-        $hashedPassword = $row['password']; // Get the stored password
+        $hashedPassword = $row['upassword']; // Get the stored password
         $username = $row['username']; // Get the username
 
         // Check if the entered password matches the stored password

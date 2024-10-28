@@ -13,7 +13,7 @@ include 'db_connect.php'; // Update this path if necessary
     <title>SafePaws - Animal Welfare System</title>
     <link rel="stylesheet" href="../CSS/ad.css"> <!--  main css -->
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
-    <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
+    <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css pull -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
     <link rel="icon" type="image/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>

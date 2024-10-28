@@ -1,3 +1,10 @@
+<?php
+// Include database connection
+include 'db_connect.php'; // Update this path if necessary
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,17 +48,7 @@
                 </ul>
     
                 <!-- SignUp / LogIn Button -->
-                <!-- Check if the user is logged in -->
-                <?php if (isset($_SESSION['username'])): ?>
-                <!-- If the user is logged in, show their username and a logout button -->
-                <button id="sign-up--button"><?php echo $_SESSION['username']; ?></button>
-                <form action="../../modal/logout.php" method="POST">
-                    <button type="submit">Logout</button>
-                </form>
-                <?php else: ?>
-                <!-- If the user is not logged in, show the signup/login button -->
                 <button id="sign-up-button">SignUp / LogIn</button>
-                <?php endif; ?>
             </nav>
         </div>
     </header>
@@ -71,7 +68,7 @@
         <div class="feature-container">
         <div class="feature">
             <a href="report.html">
-                <img src="../Images/2nd.jpeg" alt="Report Lost Pet">
+                <img src="../Images/2nd.jpeg" alt="Report Lost Pet">    
                 <h3>Report Lost Pet</h3>
             </a>
         </div>
@@ -226,7 +223,7 @@
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
                 <h2 class="signuph2">Sign Up</h2>
-                <form id="signup-form" method="POST" action="insert_user_db.php">
+                <form id="signup-form" action="signup.php" method="POST">
                     <div>
                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
@@ -255,7 +252,7 @@
             </div>
             <div id="login-form-container" class="form-container hidden">
                 <h2 class="signuph2">Log In</h2>
-                <form id="login-form" method="POST" action="../../modal/check_user_db.php">
+                <form id="login-form" action="login.php" method="POST">
                     <div>
                         <input type="email" id="login-email" name="login-email" placeholder="Email" required>
                     </div>

@@ -26,7 +26,7 @@ include 'db_connect.php'; // Update this path if necessary
             <nav>
                 <!-- Logo Section -->
                 <a href="ad.html" class="logo">
-                <img src="../Images/official_logo.png" alt="SafePaws Logo" class="logo-img">
+                <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
                 </a>
     
                 <!-- Navigation Links -->

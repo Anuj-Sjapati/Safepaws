@@ -28,28 +28,30 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         return;
     }
 
-    // Prepare data for submission
-    const formData = new FormData();
-    formData.append('username', username);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('password', password);
+    // // Prepare data for submission
+    // const formData = new FormData();
+    // formData.append('username', username);
+    // formData.append('email', email);
+    // formData.append('phone', phone);
+    // formData.append('password', password);
 
-    // AJAX request for sign-up
-    fetch('signup.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        if (data.includes('Success')) {
-            alert('Sign-up successful!');
-            window.location.href = 'ad.html'; // Redirect on success
-        } else {
-            document.getElementById('password-error').innerText = data;
-        }
-    })
-    .catch(error => console.error('Error:', error));
+    // // AJAX request for sign-up
+    // fetch('signup.php', {
+    //     method: 'POST',
+    //     body: formData
+    // })
+    // .then(response => response.text())
+    // .then(data => {
+    //     if (data.includes('Success')) {
+    //         alert('Sign-up successful!');
+    //         window.location.href = 'ad.html'; // Redirect on success
+    //     } else {
+    //         document.getElementById('password-error').innerText = data;
+    //     }
+    // })
+    // .catch(error => console.error('Error:', error));
+
+    //these commented are not required remove gareni hunxa tara check ones again!!!!
 });
 
 // Highlight password fields if validation fails
@@ -79,28 +81,28 @@ document.getElementById('switch-to-signup').addEventListener('click', function(e
 });
 
 // Handle login form submission with AJAX
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// document.getElementById('login-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    const loginEmail = document.getElementById('login-email').value;
-    const loginPassword = document.getElementById('login-password').value;
+//     const loginEmail = document.getElementById('login-email').value;
+//     const loginPassword = document.getElementById('login-password').value;
 
-    const formData = new FormData();
-    formData.append('login-email', loginEmail);
-    formData.append('login-password', loginPassword);
+//     const formData = new FormData();
+//     formData.append('login-email', loginEmail);
+//     formData.append('login-password', loginPassword);
 
-    fetch('login.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        if (data.includes('Success')) {
-            alert('Login successful!');
-            window.location.href = 'ad.html';
-        } else {
-            alert('Login failed: ' + data);
-        }
-    })
-    .catch(error => console.error('Error:', error));
-});
+//     fetch('login.php', {
+//         method: 'POST',
+//         body: formData
+//     })
+//     .then(response => response.text())
+//     .then(data => {
+//         if (data.includes('Success')) {
+//             alert('Login successful!');
+//             window.location.href = 'ad.html';
+//         } else {
+//             alert('Login failed: ' + data);
+//         }
+//     })
+//     .catch(error => console.error('Error:', error));
+// });

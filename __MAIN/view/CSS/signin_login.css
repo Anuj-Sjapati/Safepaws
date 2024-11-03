@@ -131,11 +131,6 @@ input[type="submit"]:hover {
     transition: 0.3s;
 }
 
-.error-message{
-    color: #fd1d1d;
-    font-size: 13px;
-    
-}
 
 /* Error message styling */
 .error-message {

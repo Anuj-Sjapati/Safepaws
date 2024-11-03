@@ -259,6 +259,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <div>
                         <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     </div>
+                    <div id="password-error" class="error-message"></div>
                     <div>
                         <input type="submit" value="Log In">
                     </div>

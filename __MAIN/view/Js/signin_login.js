@@ -66,6 +66,31 @@ function clearPasswordHighlight() {
     document.getElementById('password-error').innerText = '';
 }
 
+// login error message
+// document.getElementById('login-form').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent form submission
+
+//     const password = document.getElementById('login-password').value; // Correct ID
+
+//     // Check if password is less than 6 characters
+//     if (password.length < 6) {
+//         highlightLoginPasswords();
+//         document.getElementById('password-error').innerText = "Password must be at least 6 characters long.";
+//         return;
+//     }
+
+//     // Add any additional logic for successful login here
+
+//     // Optionally, if everything is fine, you can submit the form here
+//     this.submit();
+// });
+
+// function highlightLoginPasswords() {
+//     document.getElementById('login-password').style.border = '2px solid red'; // Highlight the password field
+// } 
+// not workling try to fix!!
+
+
 // Switch to the login form
 document.getElementById('switch-to-login').addEventListener('click', function(event) {
     event.preventDefault();

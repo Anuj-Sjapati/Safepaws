@@ -14,45 +14,50 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('signup-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
     clearPasswordHighlight();
+    document.getElementById('password-error').innerText = ""; // Clear previous error
 
+    // Validate passwords
     if (password !== confirmPassword || password.length < 6) {
         highlightPasswords();
         document.getElementById('password-error').innerText = "Passwords do not match or are less than 6 characters.";
         return;
     }
 
-    // // Prepare data for submission
-    // const formData = new FormData();
-    // formData.append('username', username);
-    // formData.append('email', email);
-    // formData.append('phone', phone);
-    // formData.append('password', password);
+    // Prepare data for submission
+    const formData = new FormData();
+    formData.append('username', username);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('password', password);
 
-    // // AJAX request for sign-up
-    // fetch('signup.php', {
-    //     method: 'POST',
-    //     body: formData
-    // })
-    // .then(response => response.text())
-    // .then(data => {
-    //     if (data.includes('Success')) {
-    //         alert('Sign-up successful!');
-    //         window.location.href = 'ad.html'; // Redirect on success
-    //     } else {
-    //         document.getElementById('password-error').innerText = data;
-    //     }
-    // })
-    // .catch(error => console.error('Error:', error));
-
-    //these commented are not required remove gareni hunxa tara check ones again!!!!
+    // AJAX request for sign-up
+    fetch('signup.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Check for success message
+        if (data.includes('Sign-up successful!')) {
+            document.getElementById('password-error').innerText ="Sign-up successful!";
+            window.location.href = 'ad.html'; // Redirect on success
+        } else {
+            document.getElementById('password-error').innerText = data; // Display error message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('password-error').innerText = "An error occurred during sign-up. Please try again.";
+    });
 });
+
 
 // Highlight password fields if validation fails
 function highlightPasswords() {

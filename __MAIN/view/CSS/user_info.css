@@ -2,7 +2,7 @@
 .user-info {
     margin: 20px auto;
     padding: 15px;
-    max-width: 800px;
+  /*  max-width: 800px;*/
     background-color: #fff5e6;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -21,7 +21,7 @@ h1 {
 /* Table Styles */
 .users-table {
     width: 100%; /* Full width for responsiveness */
-    max-width: 800px; /* Optional max width */
+   /* max-width: 800px;  Optional max width */
     border-collapse: collapse;
     margin-top: 15px;
     margin-left: 55px;

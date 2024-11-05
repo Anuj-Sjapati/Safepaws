@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    <!-- Header Section with updated Navigation -->
+    
     <!-- Header Section with updated Navigation -->
     <header>
         <div class="container">
@@ -41,8 +41,18 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
     
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">SignUp / LogIn</button>
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>

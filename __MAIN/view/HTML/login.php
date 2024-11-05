@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include database connection file
 include 'db_connect.php';
 
@@ -27,11 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         // Fetch the user data
         $user = $result->fetch_assoc();
+
+        // Set the username in the session
+        $_SESSION['username'] = $user['username'];
         
         // Check if the user is an admin
-        if ($user['username'] == 'admin') {
+        if ($user['username'] == 'admin' && $user['email'] == 'admin@gmail.com') {
             echo "Redirecting to admin page";  // Indicate admin login
-            // You can set up a redirect or session for admins here
         } else {
             echo "Login successful!";  // Indicate successful login for a normal user
         }

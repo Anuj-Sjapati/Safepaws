@@ -1,3 +1,11 @@
+<?php
+
+session_start(); // Start the session
+
+// Include database connection
+include 'db_connect.php'; // Update this path if necessary
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
+    <link rel="stylesheet" href="../CSS/report.css"> <!--main css-->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
     <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
@@ -26,25 +35,88 @@
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
-                            <a href="report.html">Report Lost Pet</a>
-                            <a href="lost.html">Lost Pets</a>
-                            <a href="adopt.html">Adoption</a>
-                            <a href="training.html">Training & Grooming</a>
-                            <a href="vet.html">Vet Support</a>
+                            <a href="report.php">Report Lost Pet</a>
+                            <a href="lost.php">Lost Pets</a>
+                            <a href="adopt.php">Adoption</a>
+                            <a href="training.php">Training & Grooming</a>
+                            <a href="vet.php">Vet Support</a>
                         </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
     
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">SignUp / LogIn</button>
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
 
-<h1>Donate section will be added</h1>
+    <!-- main module for report -->
+
+    <main>
+        <section class="report-pet">
+            <h1>Report a Lost Pet</h1>
+            <div class="report-info">
+                <h2>Help Us Find Your Lost Pet</h2>
+                <p>If your pet is missing, please provide the following details to assist in locating and reuniting you with your beloved companion.</p>
+            </div>
+    
+            <div class="report-form">
+                <h2>Lost Pet Report Form</h2>
+                <form id="report-pet-form" enctype="multipart/form-data">
+                    <div>
+                        <label for="pet-type">Pet Type:</label>
+                        <select id="pet-type" name="pet-type" required>
+                            <option value="" disabled selected>Select Pet Type</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="pet-name">Pet Name:</label>
+                        <input type="text" id="pet-name" name="pet-name" placeholder="Pet's Name" required>
+                    </div>
+                    <div>
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" placeholder="Describe the pet (e.g., color, size, breed)" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <label for="last-seen">Last Seen Location:</label>
+                        <input type="text" id="last-seen" name="last-seen" placeholder="Where was the pet last seen?" required>
+                    </div>
+                    <div>
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="phone">Your Phone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div>
+                        <label for="photo">Attach a Photo:</label>
+                        <input type="file" id="photo" name="photo" accept="image/*" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit Report">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    
 
     <!-- footer section -->
     <footer>
@@ -83,7 +155,7 @@
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
                 <h2 class="signuph2">Sign Up</h2>
-                <form id="signup-form">
+                <form id="signup-form" action="signup.php" method="POST">
                     <div>
                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
@@ -94,7 +166,7 @@
                         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" id="password" name="upassword" placeholder="Password" required>
                     </div>
                     <div>
                         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
@@ -112,13 +184,14 @@
             </div>
             <div id="login-form-container" class="form-container hidden">
                 <h2 class="signuph2">Log In</h2>
-                <form id="login-form">
+                <form id="login-form" action="login.php" method="POST">
                     <div>
                         <input type="email" id="login-email" name="login-email" placeholder="Email" required>
                     </div>
                     <div>
                         <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     </div>
+                    <div id="password-error-login" class="error-message-login"></div>
                     <div>
                         <input type="submit" value="Log In">
                     </div>

@@ -1,18 +1,27 @@
+<?php
+
+session_start(); // Start the session
+
+// Include database connection
+include 'db_connect.php'; // Update this path if necessary
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lost Pets - SafePaws</title>
-    <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
-    <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
-    <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
-    <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
+    <title>Emergency Care - SafePaws</title>
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/signin_login.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/grooming.css">
+    <link rel="icon" type="image/jpg" href="../Images/icon.png">
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Header Section with updated Navigation -->
-    <header>
+   <!-- Header Section with updated Navigation -->
+   <header>
         <div class="container">
             <nav>
                 <!-- Logo Section -->
@@ -26,25 +35,56 @@
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
-                            <a href="report.html">Report Lost Pet</a>
-                            <a href="lost.html">Lost Pets</a>
-                            <a href="adopt.html">Adoption</a>
-                            <a href="training.html">Training & Grooming</a>
-                            <a href="vet.html">Vet Support</a>
+                            <a href="report.php">Report Lost Pet</a>
+                            <a href="lost.php">Lost Pets</a>
+                            <a href="adopt.php">Adoption</a>
+                            <a href="training.php">Training & Grooming</a>
+                            <a href="vet.php">Vet Support</a>
                         </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
     
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">SignUp / LogIn</button>
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
 
-    <!-- footer section -->
+    <section class="grooming-section">
+        <h1>Grooming Facilities</h1>
+        <div class="grooming-list">
+            <div class="grooming-item">
+                <h2>Pet Mama</h2>
+                <a href="https://www.mypetmama.com/" class="grooming-button">View</a> <!-- Link to the detail page -->
+            </div>
+            <div class="grooming-divider"></div> <!-- Divider line -->
+            <div class="grooming-item">
+                <h2>Paws Nepal</h2>
+                <a href="https://pawsnepal.com/" class="grooming-button">View</a> <!-- Link to the detail page -->
+            </div>
+            <div class="grooming-divider"></div> <!-- Divider line -->
+            <div class="grooming-item">
+                <h2>Cage Free Dogs</h2>
+                <a href="https://cagefreedog.com.np/" class="grooming-button">View</a> <!-- Link to the detail page -->
+            </div>
+        </div>
+    </section>
+
+    
+
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -103,9 +143,6 @@
                     </div>
                     <div class="or-line"></div>
                     <label>Have an account?</label> <a href="#" id="switch-to-login">Log In</a>
-                    <br>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
                 </form>
             </div>
             <div id="login-form-container" class="form-container hidden">
@@ -122,13 +159,10 @@
                     </div>
                     <div class="or-line"></div>
                     <label>Don't have an account?</label> <a href="#" id="switch-to-signup">Sign Up</a>
-                    <br>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
                 </form>
             </div>
         </div>
-        <script src="signin_login.js"></script>
+        <script src="../Js/signin_login.js"></script>
     </div>
 </body>
 </html>

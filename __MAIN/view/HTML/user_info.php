@@ -1,4 +1,7 @@
 <?php
+
+session_start(); // Start the session
+
 // Include database connection
 include 'db_connect.php'; // Update this path if necessary
 ?>
@@ -17,35 +20,45 @@ include 'db_connect.php'; // Update this path if necessary
 </head>
 <body>
     
-    <!-- Header Section with updated Navigation -->
-    <header>
+     <!-- Header Section with updated Navigation -->
+     <header>
         <div class="container">
             <nav>
                 <!-- Logo Section -->
-                <a href="ad.html" class="logo">
+                <a href="ad.php" class="logo">
                 <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
                 </a>
     
                 <!-- Navigation Links -->
                 <ul class="nav-links">
-                    <li><a href="ad.html">Home</a></li>
+                    <li><a href="ad.php">Home</a></li>
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
-                            <a href="report.html">Report Lost Pet</a>
-                            <a href="lost.html">Lost Pets</a>
-                            <a href="adopt.html">Adoption</a>
-                            <a href="training.html">Training & Grooming</a>
-                            <a href="vet.html">Vet Support</a>
+                            <a href="report.php">Report Lost Pet</a>
+                            <a href="lost.php">Lost Pets</a>
+                            <a href="adopt.php">Adoption</a>
+                            <a href="training.php">Training & Grooming</a>
+                            <a href="vet.php">Vet Support</a>
                         </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
     
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info-nav">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">Logout</button>
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>

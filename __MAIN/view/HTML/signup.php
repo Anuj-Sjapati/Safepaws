@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -12,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $username, $email, $phone, $password);
 
     if ($stmt->execute()) {
+        $_SESSION['username'] = $username;
         echo "Sign-up successful!";     
     } else {
         echo "Error: " . $stmt->error;

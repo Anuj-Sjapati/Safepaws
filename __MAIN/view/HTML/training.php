@@ -1,3 +1,11 @@
+<?php
+
+session_start(); // Start the session
+
+// Include database connection
+include 'db_connect.php'; // Update this path if necessary
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,44 +15,75 @@
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
+    <link rel="stylesheet" href="../CSS/training.css"> <!--training css-->
     <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <!-- Header Section with updated Navigation -->
-   <header>
-    <div class="container">
-        <nav>
-            <!-- Logo Section -->
-            <a href="ad.php" class="logo">
-            <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
-            </a>
+    <!-- Header Section with updated Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- Logo Section -->
+                <a href="ad.php" class="logo">
+                <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
+                </a>
+    
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="ad.php">Home</a></li>
+                    <li class="services-dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="report.php">Report Lost Pet</a>
+                            <a href="lost.php">Lost Pets</a>
+                            <a href="adopt.php">Adoption</a>
+                            <a href="training.php">Training & Grooming</a>
+                            <a href="vet.php">Vet Support</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+    
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
+                <!-- SignUp / LogIn Button -->
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+            </nav>
+        </div>
+    </header>
 
-            <!-- Navigation Links -->
-            <ul class="nav-links">
-                <li><a href="ad.php">Home</a></li>
-                <li class="services-dropdown">
-                    <a href="#">Services</a>
-                    <div class="dropdown-content">
-                        <a href="report.html">Report Lost Pet</a>
-                        <a href="lost.html">Lost Pets</a>
-                        <a href="adopt.html">Adoption</a>
-                        <a href="training.html">Training & Grooming</a>
-                        <a href="vet.html">Vet Support</a>
-                    </div>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <section class="training-grooming-section">
+        <h1>Select a Service</h1>
+        <div class="box-container">
+            <!-- Training Box -->
+            <div class="service-box">
+                <a href="training1.html">
+                    <img src="../Images/training.jpg" alt="Training Service">
+                    <h2>Training</h2>
+                </a>
+            </div>
 
-            <!-- SignUp / LogIn Button -->
-            <button id="sign-up-button">SignUp / LogIn</button>
-        </nav>
-    </div>
-</header>
+            <!-- Grooming Box -->
+            <div class="service-box">
+                <a href="grooming.html">
+                    <img src="../Images/grooming.jpg" alt="Grooming Service">
+                    <h2>Grooming</h2>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<h1>Blog section will be added</h1>
 
     <!-- footer section -->
     <footer>

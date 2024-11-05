@@ -1,14 +1,22 @@
+<?php
+
+session_start(); // Start the session
+
+// Include database connection
+include 'db_connect.php'; // Update this path if necessary
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt - SafePaws</title>
-    <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
-    <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
-    <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
-    <link rel="stylesheet" href="../CSS/vet.css"> <!-- vet css -->
-    <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
+    <title>Check-ups - SafePaws</title>
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/signin_login.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/checkups.css">
+    <link rel="icon" type="image/jpg" href="../Images/icon.png">
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -27,60 +35,55 @@
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
-                            <a href="report.html">Report Lost Pet</a>
-                            <a href="lost.html">Lost Pets</a>
-                            <a href="adopt.html">Adoption</a>
-                            <a href="training.html">Training & Grooming</a>
-                            <a href="vet.html">Vet Support</a>
+                            <a href="report.php">Report Lost Pet</a>
+                            <a href="lost.php">Lost Pets</a>
+                            <a href="adopt.php">Adoption</a>
+                            <a href="training.php">Training & Grooming</a>
+                            <a href="vet.php">Vet Support</a>
                         </div>
                     </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
     
+                    <!-- User Greeting / Logout Button -->
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <div class="user-info">
+                            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            <a href="logout.php" class="logout-button">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <button id="sign-up-button">SignUp / LogIn</button>
+                    <?php endif; ?>
+                
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">SignUp / LogIn</button>
+                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
 
-    <section class="vet-support-section">
-        <h1>Vet Support Services</h1>
-        <p>At SafePaws, we connect you with trusted veterinary services to ensure your pets receive the best care.</p>
-        <div class="box-container">
-            <!-- Vet Check-up Box -->
-            <div class="service-box">
-                <a href="checkup.html">
-                    <img src="../Images/vetcheckup.jpg" alt="Vet Check-up Service">
-                    <h2>Check-ups</h2>
-                    <p>Regular check-ups to keep your pets healthy.</p>
-                </a>
+    <section class="checkup-section">
+        <h1>Check-up Facilities</h1>
+        <div class="checkup-list">
+            <div class="checkup-item">
+                <h2>Central Referral Veterinary Hospital</h2>
+                <a href="https://crvh.gov.np/contacts" class="checkup-button">View</a> <!-- Link to the detail page -->
             </div>
-    
-            <!-- Vaccination Box -->
-            <div class="service-box">
-                <a href="vaccination.html">
-                    <img src="../Images/vaccination.jpg" alt="Vaccination Service">
-                    <h2>Vaccination</h2>
-                    <p>Essential vaccinations for your pets' safety.</p>
-                </a>
+            <div class="checkup-divider"></div> <!-- Divider line -->
+            <div class="checkup-item">
+                <h2>City Veterinary Hospital</h2>
+                <a href="https://cityvetnepal.com/services.html" class="checkup-button">View</a> <!-- Link to the detail page -->
             </div>
-    
-            <!-- Emergency Care Box -->
-            <div class="service-box">
-                <a href="emergency.html">
-                    <img src="../Images/emergencycare.jpg" alt="Emergency Care Service">
-                    <h2>Emergency Care</h2>
-                    <p>Immediate care for urgent health issues.</p>
-                </a>
+            <div class="checkup-divider"></div> <!-- Divider line -->
+            <div class="checkup-item">
+                <h2>Animal Medical Centre Nepal</h2>
+                <a href="https://www.instagram.com/animalmedicalcentrenepal/?hl=en" class="checkup-button">View</a> <!-- Link to the detail page -->
             </div>
         </div>
     </section>
     
 
-
-    <!-- footer section -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -139,9 +142,6 @@
                     </div>
                     <div class="or-line"></div>
                     <label>Have an account?</label> <a href="#" id="switch-to-login">Log In</a>
-                    <br>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
                 </form>
             </div>
             <div id="login-form-container" class="form-container hidden">
@@ -158,9 +158,6 @@
                     </div>
                     <div class="or-line"></div>
                     <label>Don't have an account?</label> <a href="#" id="switch-to-signup">Sign Up</a>
-                    <br>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
                 </form>
             </div>
         </div>

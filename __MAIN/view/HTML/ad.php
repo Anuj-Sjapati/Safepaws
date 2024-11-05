@@ -25,13 +25,13 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="container">
             <nav>
                 <!-- Logo Section -->
-                <a href="ad.html" class="logo">
+                <a href="ad.php" class="logo">
                 <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
                 </a>
     
                 <!-- Navigation Links -->
                 <ul class="nav-links">
-                    <li><a href="ad.html">Home</a></li>
+                    <li><a href="ad.php">Home</a></li>
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
@@ -259,7 +259,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <div>
                         <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     </div>
-                    <div id="password-error" class="error-message"></div>
+                    <div id="password-error-login" class="error-message-login"></div>
                     <div>
                         <input type="submit" value="Log In">
                     </div>

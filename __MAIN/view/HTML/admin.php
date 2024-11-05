@@ -19,17 +19,18 @@ include 'db_connect.php'; // Update this path if necessary
 <body>
     
     <!-- Header Section with updated Navigation -->
+    <!-- Header Section with updated Navigation -->
     <header>
         <div class="container">
             <nav>
                 <!-- Logo Section -->
-                <a href="ad.html" class="logo">
+                <a href="ad.php" class="logo">
                 <img src="../Images/OFFICIAL_logoV.1.png" alt="SafePaws Logo" class="logo-img">
                 </a>
     
                 <!-- Navigation Links -->
                 <ul class="nav-links">
-                    <li><a href="ad.html">Home</a></li>
+                    <li><a href="ad.php">Home</a></li>
                     <li class="services-dropdown">
                         <a href="#">Services</a>
                         <div class="dropdown-content">
@@ -46,7 +47,7 @@ include 'db_connect.php'; // Update this path if necessary
                 </ul>
     
                 <!-- SignUp / LogIn Button -->
-                <button id="sign-up-button">Logout</button>
+                <button id="sign-up-button">SignUp / LogIn</button>
             </nav>
         </div>
     </header>

@@ -47,53 +47,81 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         // Check for success message
         if (data.includes('Sign-up successful!')) {
             document.getElementById('password-error').innerText ="Sign-up successful!";
-            window.location.href = 'ad.html'; // Redirect on success
+            window.location.href = 'ad.php'; // Redirect on success
         } else {
             document.getElementById('password-error').innerText = data; // Display error message
         }
     })
-    .catch(error => {
+    .catch(error => {  
         console.error('Error:', error);
         document.getElementById('password-error').innerText = "An error occurred during sign-up. Please try again.";
     });
 });
 
 
-// Highlight password fields if validation fails
+// Handle login form submission with AJAX
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+
+    // Clear any previous error message
+    clearPasswordHighlight();
+    document.getElementById('password-error').innerText = ""; // Clear previous error
+
+    // Prepare data for submission
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
+
+    // AJAX request for login
+    fetch('login.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Check for specific success messages to determine user type
+        if (data.includes("Redirecting to admin page")) {
+            document.getElementById('password-error-login').innerText ="Redirecting to admin page";
+            window.location.href = 'admin.php'; // Redirect to admin page for admin users
+        } else if (data.includes("Login successful!")) {
+            document.getElementById('password-error-login').innerText ="Login successful!";
+            window.location.href = 'ad.php'; // Redirect to home page for regular users
+        } else if (data.includes("Invalid email or password")) {
+            highlightPasswords();
+        } else {
+            document.getElementById('password-error').innerText = data; // Display any error message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('password-error').innerText = "An error occurred during login. Please try again.";
+    });
+});
+
+
+// Highlight password fields if validation fails for signup/login
 function highlightPasswords() {
     document.getElementById('password').style.border = '2px solid red';
     document.getElementById('confirm-password').style.border = '2px solid red';
+    
+    //for login
+    document.getElementById('login-email').style.border = '2px solid red';
+    document.getElementById('login-password').style.border = '2px solid red'; 
+    document.getElementById('password-error-login').innerText = "Invalid email or password!!";
 }
 
 function clearPasswordHighlight() {
     document.getElementById('password').style.border = '';
     document.getElementById('confirm-password').style.border = '';
     document.getElementById('password-error').innerText = '';
+
+    //for login
+    document.getElementById('login-password').style.border = '';
+    document.getElementById('password-error-login').innerText = '';
 }
-
-// login error message
-// document.getElementById('login-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Prevent form submission
-
-//     const password = document.getElementById('login-password').value; // Correct ID
-
-//     // Check if password is less than 6 characters
-//     if (password.length < 6) {
-//         highlightLoginPasswords();
-//         document.getElementById('password-error').innerText = "Password must be at least 6 characters long.";
-//         return;
-//     }
-
-//     // Add any additional logic for successful login here
-
-//     // Optionally, if everything is fine, you can submit the form here
-//     this.submit();
-// });
-
-// function highlightLoginPasswords() {
-//     document.getElementById('login-password').style.border = '2px solid red'; // Highlight the password field
-// } 
-// not workling try to fix!!
 
 
 // Switch to the login form
@@ -110,29 +138,4 @@ document.getElementById('switch-to-signup').addEventListener('click', function(e
     document.getElementById('signup-form-container').classList.remove('hidden');
 });
 
-// Handle login form submission with AJAX
-// document.getElementById('login-form').addEventListener('submit', function(event) {
-//     event.preventDefault();
 
-//     const loginEmail = document.getElementById('login-email').value;
-//     const loginPassword = document.getElementById('login-password').value;
-
-//     const formData = new FormData();
-//     formData.append('login-email', loginEmail);
-//     formData.append('login-password', loginPassword);
-
-//     fetch('login.php', {
-//         method: 'POST',
-//         body: formData
-//     })
-//     .then(response => response.text())
-//     .then(data => {
-//         if (data.includes('Success')) {
-//             alert('Login successful!');
-//             window.location.href = 'ad.html';
-//         } else {
-//             alert('Login failed: ' + data);
-//         }
-//     })
-//     .catch(error => console.error('Error:', error));
-// });

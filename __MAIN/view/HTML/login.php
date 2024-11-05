@@ -1,42 +1,46 @@
 <?php
-session_start(); // Start the session
-include 'db_connect.php'; // Include the database connection file
+// Include database connection file
+include 'db_connect.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the entered email and password from the form
-    $email = $_POST['login-email'];
-    $password = $_POST['login-password'];
+// Check if the request method is POST (form submitted)
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Collect data from the form inputs
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // SQL statement to check if the user exists and retrieve the stored password
+    $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
     
-    // Check if the email exists in the database
-    $query = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $query);
+    // Prepare the SQL statement for execution
+    $stmt = $conn->prepare($sql);
+    
+    // Bind the form values to the SQL statement
+    $stmt->bind_param("ss", $email, $password);
 
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
+    // Execute the statement
+    $stmt->execute();
+    
+    // Get the result of the query
+    $result = $stmt->get_result();
+
+    // Check if any row matches (valid login)
+    if ($result->num_rows > 0) {
+        // Fetch the user data
+        $user = $result->fetch_assoc();
         
-        // Direct comparison of plain text password
-        if ($password == $row['password']) { // No hashing
-            $_SESSION['login-email'] = $row['email'];
-            $_SESSION['username'] = $row['username'];
-            
-            // Redirect based on user role
-            if ($row['username'] == 'admin') {
-                header("Location: admin.php");
-            } else { 
-                // header("Location: ad.php");
-                echo "Login Successful";
-            }
-            exit();
+        // Check if the user is an admin
+        if ($user['username'] == 'admin') {
+            echo "Redirecting to admin page";  // Indicate admin login
+            // You can set up a redirect or session for admins here
         } else {
-            echo "Incorrect password.";
+            echo "Login successful!";  // Indicate successful login for a normal user
         }
     } else {
-        echo "No account found with this email.";
-        // header("Location: login.php?error=Incorrect password");
-        //     exit();
+        echo "Invalid email or password";  // Error message for failed login
     }
-}
 
-// Close the database connection
-mysqli_close($conn);
+    // Close the statement and the connection
+    $stmt->close();
+    $conn->close();
+}
 ?>

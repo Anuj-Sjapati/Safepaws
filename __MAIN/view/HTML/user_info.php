@@ -61,6 +61,7 @@ include 'db_connect.php'; // Update this path if necessary
                 <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
+        
     </header>
 
     <div class="user-info">

@@ -20,8 +20,8 @@ include 'db_connect.php'; // Update this path if necessary
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <!-- Header Section with updated Navigation -->
-   <header> 
+<!-- Header Section with updated Navigation -->
+<header>
         <div class="container">
             <nav>
                 <!-- Logo Section -->
@@ -51,6 +51,11 @@ include 'db_connect.php'; // Update this path if necessary
                     <?php if (isset($_SESSION['username'])): ?>
                         <div class="user-info">
                             <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            
+                            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                                <a href="admin.php" class="admin-link">Admin Page</a>
+                            <?php endif; ?>
+
                             <a href="logout.php" class="logout-button">Logout</a>
                         </div>
                     <?php else: ?>

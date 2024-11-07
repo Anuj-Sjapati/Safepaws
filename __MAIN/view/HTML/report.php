@@ -44,13 +44,18 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                  <li><a href="Aboutus.php">About us</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
                     <?php if (isset($_SESSION['username'])): ?>
                         <div class="user-info">
                             <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+                            
+                            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                                <a href="admin.php" class="admin-link">Admin Page</a>
+                            <?php endif; ?>
+
                             <a href="logout.php" class="logout-button">Logout</a>
                         </div>
                     <?php else: ?>

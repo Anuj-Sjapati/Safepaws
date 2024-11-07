@@ -157,7 +157,7 @@ nav {
     margin-right: 1rem; /* Space between username and logout */
 }
 
-.logout-button {
+.logout-button, .admin-link {
     background-color: #ff6b6b;
     color: #fff;
     border: none;
@@ -168,8 +168,13 @@ nav {
     font-weight: bold;
     text-decoration: none; /* Remove underline for link */
     transition: background-color 0.3s ease;
+    margin-left: 10px;
 }
 
 .logout-button:hover {
+    background-color: #ff4b4b;
+}
+
+.admin-link:hover {
     background-color: #ff4b4b;
 }

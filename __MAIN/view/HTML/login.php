@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['username'] = $user['username'];
         
         // Check if the user is an admin
-        if ($user['username'] == 'admin' && $user['email'] == 'admin@gmail.com') {
+        if ($user['username'] == 'safepawsadmin' && $user['email'] == 'safepawsadmin@gmail.com') {
             $_SESSION['is_admin'] = true; //
             echo "Redirecting to admin page";  // Indicate admin login
         } else {

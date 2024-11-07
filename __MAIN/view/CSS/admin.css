@@ -1,60 +1,94 @@
+/* Full height for html and body, Flex layout */
 html, body {
-    height: 100%; /* Ensure the html and body elements cover the full height */
-    margin: 0; /* Remove default margins */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Main content section styling */
 .user-report-section {
+    flex: 1;
     text-align: center;
-    margin: 0; /* Remove margin for full height */
-    padding: 20px; /* Add padding for spacing */
-    flex: 1; /* Allow this section to grow and fill available space */
-    display: flex; /* Use flexbox to center content */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Heading adjustment to move it up */
+.user-report-section h1 {
+    margin-bottom: 40px; /* Adjust this value to control spacing below the heading */
+}
+
+/* Container for boxes */
 .box-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between boxes */
-    flex-wrap: wrap; /* Allow boxes to wrap onto the next line */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* Individual info box styling */
 .info-box {
-    width: 200px; /* Set a fixed width for the boxes */
-    border: 2px solid #1a3b5d; /* Border color */
+    width: 200px;
+    border: 2px solid #1a3b5d;
     border-radius: 10px;
-    padding: 20px; /* Add padding to create space around the text */
-    transition: transform 0.2s; /* Add a transition for hover effect */
+    padding: 20px;
+    transition: transform 0.2s;
 }
 
+/* Hover effect for info boxes */
 .info-box:hover {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
+/* Style for headings within info boxes */
 .info-box h2 {
-    color: #1a3b5d; /* Main color for headings */
-    margin: 0; /* Remove margin if not needed */
+    color: #1a3b5d;
+    margin: 0;
+}
+
+/* Remove underline for links in info boxes */
+.info-box a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherit the color from .info-box h2 */
+}
+
+/* Footer styling */
+footer {
+    background-color: #1a3b5d; /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Footer bottom text size */
+.footer-bottom {
+    font-size: 14px;
 }
 
 /* Responsive Design */
+
+/* Adjust layout for tablets and small screens */
 @media (max-width: 768px) {
     .info-box {
-        width: 90%; /* Make boxes wider on smaller screens */
+        width: 90%; /* Wider boxes on smaller screens */
         max-width: 300px; /* Set a maximum width */
-        margin: 10px; /* Add margin around each box */
+        margin: 10px; /* Margin around each box */
     }
 }
 
+/* Stack boxes vertically on very small screens */
 @media (max-width: 480px) {
     .info-box {
-        width: 95%; /* Make boxes take up more width on very small screens */
-        max-width: none; /* Remove maximum width constraint */
+        width: 95%; /* Make boxes take up more width */
+        max-width: none; /* Remove max width */
     }
 
     .box-container {
-        flex-direction: column; /* Stack boxes vertically on small screens */
+        flex-direction: column; /* Stack boxes vertically */
         align-items: center; /* Center boxes in the column */
     }
 }

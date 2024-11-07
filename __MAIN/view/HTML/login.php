@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Check if the user is an admin
         if ($user['username'] == 'safepawsadmin' && $user['email'] == 'safepawsadmin@gmail.com') {
-            $_SESSION['is_admin'] = true; //
+            $_SESSION['is_admin'] = true; // to check and set vaule in session that admin has login 
             echo "Redirecting to admin page";  // Indicate admin login
         } else {
             echo "Login successful!";  // Indicate successful login for a normal user

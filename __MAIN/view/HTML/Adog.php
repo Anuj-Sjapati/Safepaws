@@ -45,7 +45,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -105,16 +105,16 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- footer section -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="ad.html">Home</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -135,13 +135,64 @@ include 'db_connect.php'; // Update this path if necessary
             <p>&copy; 2024 SafePaws. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Signup Popup Modal -->
-    <div id="signup-modal" class="modal hidden">
+<!-- Signup Popup Modal -->
+<div id="signup-modal" class="modal hidden">
         <div class="modal-content">
-            <!-- Modal Content... -->
-            <script src="../Js/signin_login.js"></script>
+            <span id="close-modal" class="close">&times;</span>
+            <div id="signup-form-container" class="form-container">
+                <h2 class="signuph2">Sign Up</h2>
+                <form id="signup-form" action="signup.php" method="POST">
+                    <div>
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="upassword" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <div id="password-error" class="error-message"></div>
+                    <div>
+                        <input type="submit" value="Signup">
+                    </div>
+                    <div class="or-line"></div>
+                    <label>Have an account?</label> <a href="#" id="switch-to-login">Log In</a>
+                    <br>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </form>
+            </div>
+            <div id="login-form-container" class="form-container hidden">
+                <h2 class="signuph2">Log In</h2>
+                <form id="login-form" action="login.php" method="POST">
+                    <div>
+                        <input type="email" id="login-email" name="login-email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input type="password" id="login-password" name="login-password" placeholder="Password" required>
+                    </div>
+                    <div id="password-error-login" class="error-message-login"></div>
+                    <div>
+                        <input type="submit" value="Log In">
+                    </div>
+                    <div class="or-line"></div>
+                    <label>Don't have an account?</label> <a href="#" id="switch-to-signup">Sign Up</a>
+                    <br>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                </form>
+            </div>
         </div>
+        <script src="../Js/signin_login.js"></script>
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../Js/ad.js"></script>
 </body>
 </html>

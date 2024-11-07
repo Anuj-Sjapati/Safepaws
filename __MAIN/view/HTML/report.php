@@ -11,7 +11,7 @@ include 'db_connect.php'; // Update this path if necessary
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt - SafePaws</title>
+    <title>Report - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/report.css"> <!--main css-->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
@@ -44,7 +44,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                  <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -124,10 +124,10 @@ include 'db_connect.php'; // Update this path if necessary
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="ad.html">Home</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -149,8 +149,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </footer>
 
-    <!-- Signup Popup Modal -->
-    <div id="signup-modal" class="modal hidden">
+  <!-- Signup Popup Modal -->
+  <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
@@ -205,5 +205,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
         <script src="../Js/signin_login.js"></script>
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../Js/ad.js"></script>
 </body>
 </html>

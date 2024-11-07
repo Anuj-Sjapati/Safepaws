@@ -11,10 +11,11 @@ include 'db_connect.php'; // Update this path if necessary
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt - SafePaws</title>
+    <title>Blog - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
+    <link rel="stylesheet" href="../CSS/blog.css"> <!--blog css-->
     <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
@@ -43,7 +44,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -62,7 +63,59 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </header>
 
-<h1>Blog section will be added</h1>
+ <!-- Blog Content -->
+ <main>
+      
+      <!-- Centered Blog Entries Section -->
+      <center>
+      <section class="blog-entries">
+          <article>
+          <h2>The Importance of Pet Adoption</h2> 
+              <p>Adopting a pet can bring joy, companionship, and fulfillment into your life. When you choose to adopt, you're not only giving an animal a loving home, but you're also helping reduce overcrowding in shelters and fighting against animal homelessness. Adopting provides animals with a chance at a new life while allowing you to experience the unique bond that comes with rescuing an animal in need. Learn more about how adoption changes lives for both you and your pet.</p>
+          </article>
+          
+          <article>
+                <h2>Pet Grooming Essentials</h2> 
+              <p>Regular grooming is essential for maintaining a pet’s health and happiness. From brushing fur and trimming nails to checking for signs of health issues, grooming plays a major role in ensuring a comfortable life for your pet. In this blog, we dive into essential grooming practices, how to get started with at-home grooming, and tips for knowing when to seek professional grooming. Good grooming habits also offer the chance for bonding, helping your pet feel loved and cared for.</p>
+          </article>
+          
+          <article>
+              <h2>Understanding Pet Behavior</h2>
+              <p>Pets communicate in unique ways, and understanding their behavior can lead to a more harmonious relationship. This blog covers common pet behaviors, what they mean, and how you can respond in ways that meet your pet's needs. From interpreting body language to identifying signs of anxiety or happiness, understanding your pet’s behavior can help you better address their needs and build a stronger bond.</p>
+          </article>
+      </section>
+  
+      <!-- Resource Links Section -->
+      <section class="resource-links">
+          <div class="resource-card">
+              <a href="https://www.pawlicy.com/blog/pet-care/" target="_blank">
+                  <img src="../Images/pet-care.jpg" alt="Pet Care Blog" class="resource-image">
+                  <h3>Pet Care Tips</h3>
+                  <p>Essential advice and guidance for responsible pet care. Get insights into nutrition, exercise, and overall well-being for pets of all ages.</p>
+                  <p class="resource-link">More on Pet Care</p>
+              </a>
+          </div>
+          
+          <div class="resource-card">
+              <a href="https://www.pawlicy.com/blog/vet/" target="_blank">
+                  <img src="../Images/vet-support.jpg" alt="Vet Support Blog" class="resource-image">
+                  <h3>Veterinary Support</h3>
+                  <p>Learn about the importance of regular veterinary care, including vaccinations, check-ups, and emergency care tips.</p>
+                  <p class="resource-link">More on Vet Support</p>
+              </a>
+          </div>
+          
+          <div class="resource-card">
+              <a href="https://www.pawlicy.com/blog/" target="_blank">
+                  <img src="../Images/blog.jpg" alt="Pet Blog" class="resource-image">
+                  <h3>More Blogs</h3>
+                  <p>Explore a wide range of pet-related topics, from training tips to lifestyle guides, and discover how to enhance life with your pet.</p>
+                  <p class="resource-link">More Blogs</p>
+              </a>
+          </div>
+      </section>
+  </main>
+  </center> 
 
     <!-- footer section -->
     <footer>
@@ -70,10 +123,10 @@ include 'db_connect.php'; // Update this path if necessary
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="ad.html">Home</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -95,13 +148,13 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </footer>
 
-    <!-- Signup Popup Modal -->
-    <div id="signup-modal" class="modal hidden">
+ <!-- Signup Popup Modal -->
+ <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
                 <h2 class="signuph2">Sign Up</h2>
-                <form id="signup-form">
+                <form id="signup-form" action="signup.php" method="POST">
                     <div>
                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
@@ -112,7 +165,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" id="password" name="upassword" placeholder="Password" required>
                     </div>
                     <div>
                         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
@@ -130,13 +183,14 @@ include 'db_connect.php'; // Update this path if necessary
             </div>
             <div id="login-form-container" class="form-container hidden">
                 <h2 class="signuph2">Log In</h2>
-                <form id="login-form">
+                <form id="login-form" action="login.php" method="POST">
                     <div>
                         <input type="email" id="login-email" name="login-email" placeholder="Email" required>
                     </div>
                     <div>
                         <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     </div>
+                    <div id="password-error-login" class="error-message-login"></div>
                     <div>
                         <input type="submit" value="Log In">
                     </div>
@@ -150,5 +204,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
         <script src="../Js/signin_login.js"></script>
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../Js/ad.js"></script>
 </body>
 </html>

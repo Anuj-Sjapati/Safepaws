@@ -10,7 +10,7 @@ include 'db_connect.php'; // Update this path if necessary
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafePaws - Animal Welfare System</title>
+    <title>Admin--SafePaws - Animal Welfare System</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
@@ -45,7 +45,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -77,15 +77,39 @@ include 'db_connect.php'; // Update this path if necessary
 
             <!-- Report Information Box -->
             <div class="info-box">
-                <a href="report_info.html">
+                <a href="report_info.php">
                     <h2>Report Information</h2>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- footer section -->
+        <!-- footer section -->
     <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Information</h3>
+                <p>Address: Kathmandu, Nepal</p>
+                <p>Phone: (+977) 9812345678 </p>
+                <p>Email: <a href="mailto:#">info@safepaws.com</a></p>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2024 SafePaws. All rights reserved.</p>
         </div>

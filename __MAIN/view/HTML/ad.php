@@ -45,7 +45,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -78,25 +78,25 @@ include 'db_connect.php'; // Update this path if necessary
         <h2>Our Key Features</h2>
         <div class="feature-container">
         <div class="feature">
-            <a href="report.html">
+            <a href="report.php">
                 <img src="../Images/2nd.jpeg" alt="Report Lost Pet">    
                 <h3>Report Lost Pet</h3>
             </a>
         </div>
         <div class="feature">
-            <a href="adopt.html">
+            <a href="adopt.php">
                 <img src="../Images/3rd.jpg" alt="Adoption">
                 <h3>Adoption</h3>
             </a>
         </div>
         <div class="feature">
-            <a href="training.html">
+            <a href="training.php">
                 <img src="../Images/4th.jpg" alt="Training & Grooming">
                 <h3>Training & Grooming</h3>
             </a>
         </div>
         <div class="feature">
-            <a href="blog.html">
+            <a href="blog.php">
                 <img src="../Images/5th.jpg" alt="Resources">
                 <h3>Resources</h3>
             </a>
@@ -196,17 +196,16 @@ include 'db_connect.php'; // Update this path if necessary
             </div>
         </div>
     </section>
-
-    <!-- footer section -->
-    <footer>
+ <!-- footer section -->
+ <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="ad.html">Home</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -228,8 +227,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </footer>
 
-    <!-- Signup Popup Modal -->
-    <div id="signup-modal" class="modal hidden">
+  <!-- Signup Popup Modal -->
+  <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">

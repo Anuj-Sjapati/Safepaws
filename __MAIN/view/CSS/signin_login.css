@@ -133,7 +133,7 @@ input[type="submit"]:hover {
 
 
 /* Error message styling */
-.error-message, .error-message-login {
+.error-message {
     color: red;
     font-size: 14px;
 }

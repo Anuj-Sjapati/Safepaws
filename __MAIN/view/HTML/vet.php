@@ -11,7 +11,7 @@ include 'db_connect.php'; // Update this path if necessary
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt - SafePaws</title>
+    <title>Vet - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
@@ -44,7 +44,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="donate.php">Donate</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
     
                     <!-- User Greeting / Logout Button -->
@@ -69,7 +69,7 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="box-container">
             <!-- Vet Check-up Box -->
             <div class="service-box">
-                <a href="checkup.html">
+                <a href="checkup.php">
                     <img src="../Images/vetcheckup.jpg" alt="Vet Check-up Service">
                     <h2>Check-ups</h2>
                     <p>Regular check-ups to keep your pets healthy.</p>
@@ -78,7 +78,7 @@ include 'db_connect.php'; // Update this path if necessary
     
             <!-- Vaccination Box -->
             <div class="service-box">
-                <a href="vaccination.html">
+                <a href="vaccination.php">
                     <img src="../Images/vaccination.jpg" alt="Vaccination Service">
                     <h2>Vaccination</h2>
                     <p>Essential vaccinations for your pets' safety.</p>
@@ -87,7 +87,7 @@ include 'db_connect.php'; // Update this path if necessary
     
             <!-- Emergency Care Box -->
             <div class="service-box">
-                <a href="emergency.html">
+                <a href="emergency.php">
                     <img src="../Images/emergencycare.jpg" alt="Emergency Care Service">
                     <h2>Emergency Care</h2>
                     <p>Immediate care for urgent health issues.</p>
@@ -98,16 +98,16 @@ include 'db_connect.php'; // Update this path if necessary
     
 
 
-    <!-- footer section -->
-    <footer>
+     <!-- footer section -->
+     <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="ad.html">Home</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="ad.php">Home</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                    <li><a href="terms.php">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -129,13 +129,13 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </footer>
 
-    <!-- Signup Popup Modal -->
-    <div id="signup-modal" class="modal hidden">
+   <!-- Signup Popup Modal -->
+   <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
             <div id="signup-form-container" class="form-container">
                 <h2 class="signuph2">Sign Up</h2>
-                <form id="signup-form">
+                <form id="signup-form" action="signup.php" method="POST">
                     <div>
                         <input type="text" id="username" name="username" placeholder="Username" required>
                     </div>
@@ -146,7 +146,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
                     <div>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" id="password" name="upassword" placeholder="Password" required>
                     </div>
                     <div>
                         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
@@ -164,13 +164,14 @@ include 'db_connect.php'; // Update this path if necessary
             </div>
             <div id="login-form-container" class="form-container hidden">
                 <h2 class="signuph2">Log In</h2>
-                <form id="login-form">
+                <form id="login-form" action="login.php" method="POST">
                     <div>
                         <input type="email" id="login-email" name="login-email" placeholder="Email" required>
                     </div>
                     <div>
                         <input type="password" id="login-password" name="login-password" placeholder="Password" required>
                     </div>
+                    <div id="password-error-login" class="error-message-login"></div>
                     <div>
                         <input type="submit" value="Log In">
                     </div>
@@ -184,5 +185,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
         <script src="../Js/signin_login.js"></script>
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../Js/ad.js"></script>
 </body>
 </html>

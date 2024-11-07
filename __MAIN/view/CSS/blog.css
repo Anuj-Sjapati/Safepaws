@@ -27,7 +27,7 @@ main {
 }
 
 .blog-entries h2 {
-    color: #7a5230;
+    color: #1a3b5d;
     font-size: 1.8rem;
 }
 
@@ -70,7 +70,7 @@ main {
 
 /* Heading and paragraph styles within resource cards */
 .resource-card h3 {
-    color: #7a5230;
+    color: #1a3b5d;
     margin-top: 1rem;
     font-size: 1.3rem;
 }
@@ -82,7 +82,7 @@ main {
 
 .resource-link {
     font-weight: bold;
-    color: #7a5230;
+    color: #1a3b5d;
     margin-top: 0.5rem;
 }
 

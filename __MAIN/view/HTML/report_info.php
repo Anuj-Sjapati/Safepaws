@@ -77,7 +77,8 @@ include 'db_connect.php';
                     <th>Description</th>
                     <th>Last Seen</th>
                     <th>Reporter Name</th>
-                    <th>Contact Phone</th> <!-- email not shown -->
+                    <th>Contact Phone</th> 
+                    <!-- <th>Users Email</th> email not shown -->
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -102,6 +103,7 @@ include 'db_connect.php';
                         echo "<td>" . htmlspecialchars($row['last_seen']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
+                        // echo "<td>" . htmlspecialchars($row['user_email']) . "</td>";
                         echo "<td>
                                 <a href='approve_report.php?id=" . $row['id'] . "' class='approve-button'>Approve</a> | 
                                 <a href='delete_report.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>

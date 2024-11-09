@@ -104,7 +104,7 @@ include 'db_connect.php'; // Update this path if necessary
                         echo "<td>" . $row['phone'] . "</td>";
                         echo "<td>" . $row['password'] . "</td>"; 
                         echo "<td>
-                                <button class='edit-button' data-id='" . $row['id'] . "'>Edit</button>
+                                <button class='edit-button' data-id='" . $row['id'] . "'>Edit</button> | 
                                 <a href='delete_user.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>
                                 </td>"; 
                         echo "</tr>";

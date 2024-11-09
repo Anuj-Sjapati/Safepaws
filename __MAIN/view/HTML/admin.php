@@ -71,7 +71,7 @@ include 'db_connect.php'; // Update this path if necessary
 
     <!-- Category  -->
         <div class="user-report-section">
-        <h1>Select an Information Category</h1>
+        <h1>Information Category</h1>
         <div class="box-container">
             <!-- User Information Box -->
             <div class="info-box">

@@ -1,9 +1,6 @@
 <?php
-
-session_start(); // Start the session
-
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+session_start();
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +8,10 @@ include 'db_connect.php'; // Update this path if necessary
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Info - SafePaws</title>
-    <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
-    <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
-    <link rel="stylesheet" href="../CSS/user_info.css"> <!--main css-->
+    <title>Reported Pets - SafePaws</title>
+    <link rel="stylesheet" href="../CSS/nav.css"> <!-- nav css -->
+    <link rel="stylesheet" href="../CSS/footer.css"> <!-- footer css -->
+    <link rel="stylesheet" href="../CSS/report_info.css"> <!-- main css for reports -->
     <link rel="icon" type="image/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
@@ -68,26 +65,26 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </header>
 
-    <div class="user-info">
-        <h1>User Informations</h1>
-        <table class="users-table">
+    <!-- Reported Pets Information Section -->
+    <div class="report-info">
+        <h1>Reported Lost Pets</h1>
+        <table class="reports-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Password</th>
+                    <th>Photo</th>
+                    <th>Pet Type</th>
+                    <th>Pet Name</th>
+                    <th>Description</th>
+                    <th>Last Seen</th>
+                    <th>Reporter Name</th>
+                    <th>Contact Phone</th> <!-- email not shown -->
                     <th>Actions</th>
                 </tr>
             </thead>
-
-            <tbody>
-               
             <tbody>
                 <?php
-                    // Fetch user information from the database
-                    $sql = "SELECT * FROM users"; // Change 'users' to your actual table name
+                    // Fetch reported pet information from the database
+                    $sql = "SELECT * FROM reports"; // Adjust 'reports' to your actual table name if different
                     $result = mysqli_query($conn, $sql);
 
                     // Check if the query was successful
@@ -95,18 +92,20 @@ include 'db_connect.php'; // Update this path if necessary
                         die("Database query failed: " . mysqli_error($conn));
                     }
 
-                    // Loop through the results and display each row in the table
+                    // Loop through each report and display in the table
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>"; // Added 'id' for the ID column
-                        echo "<td>" . $row['username'] . "</td>";
-                        echo "<td>" . $row['email'] . "</td>";
-                        echo "<td>" . $row['phone'] . "</td>";
-                        echo "<td>" . $row['password'] . "</td>"; 
+                        echo "<td><img src='" . htmlspecialchars($row['photo_path']) . "' alt='Pet Photo' class='pet-photo'></td>";
+                        echo "<td>" . htmlspecialchars($row['pet_type']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['pet_name']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['description']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['last_seen']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
                         echo "<td>
-                                <button class='edit-button' data-id='" . $row['id'] . "'>Edit</button>
-                                <a href='delete_user.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>
-                                </td>"; 
+                                <a href='approve_report.php?id=" . $row['id'] . "' class='approve-button'>Approve</a> | 
+                                <a href='delete_report.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>
+                              </td>";
                         echo "</tr>";
                     }
                 ?>
@@ -114,40 +113,18 @@ include 'db_connect.php'; // Update this path if necessary
         </table>
     </div>
 
-    <!-- Edit User Form -->
-    <div id="edit-form" style="display: none;">
-    <span class="close-button" onclick="document.getElementById('edit-form').style.display='none'">&times;</span>
-    <h2>Edit User Information</h2>
-    <form action="edit_user.php" method="post">
-        <input type="hidden" name="user_id" id="edit-user-id">
-        <label>Username:</label>
-        <input type="text" name="username" id="edit-username">
-        <label>Email:</label>
-        <input type="email" name="email" id="edit-email">
-        <label>Phone:</label>
-        <input type="text" name="phone" id="edit-phone">
-        <label>Password:</label>
-        <input type="password" name="password" id="edit-password">
-        <button type="submit">Save Changes</button>
-    </form>
-</div>
-
-<script>
-function confirmDelete() {
-    return confirm('Are you sure you want to delete this user?'); // Show confirmation dialog
-}
-</script>
-
-
-
-     <!-- footer section -->
-     <footer>
+    <!-- Footer section -->
+    <footer>
         <div class="footer-bottom">
             <p>&copy; 2024 SafePaws. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Link to the external JavaScript file -->
-    <script src="../Js/edit_user.js"></script>
+    <!-- JavaScript for confirmation dialog on delete action -->
+    <script>
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this report?');
+    }
+    </script>
 </body>
 </html>

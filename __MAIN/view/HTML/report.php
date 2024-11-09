@@ -1,6 +1,6 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
 // Include database connection
 include 'db_connect.php'; // Update this path if necessary
@@ -80,7 +80,7 @@ include 'db_connect.php'; // Update this path if necessary
     
             <div class="report-form">
                 <h2>Lost Pet Report Form</h2>
-                <form id="report-pet-form" enctype="multipart/form-data">
+                <form id="report-pet-form" enctype="multipart/form-data" action = "lost_pets_reports.php" method = "POST">
                     <div>
                         <label for="pet-type">Pet Type:</label>
                         <select id="pet-type" name="pet-type" required>
@@ -114,6 +114,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <label for="photo">Attach a Photo:</label>
                         <input type="file" id="photo" name="photo" accept="image/*" required>
                     </div>
+                    <div id="error-message-report" class="error-message-report"></div>
                     <div>
                         <input type="submit" value="Submit Report">
                     </div>
@@ -212,6 +213,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
     <!-- Link to the external JavaScript file -->
-    <script src="../Js/ad.js"></script>
+    <script src="../Js/report.js"></script>
 </body>
 </html>

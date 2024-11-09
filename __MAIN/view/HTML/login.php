@@ -29,8 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Fetch the user data
         $user = $result->fetch_assoc();
 
-        // Set the username in the session
+        // Set the username and email in the session
         $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
         
         // Check if the user is an admin
         if ($user['username'] == 'safepawsadmin' && $user['email'] == 'safepawsadmin@gmail.com') {

@@ -84,3 +84,6 @@ textarea {
     line-height: 1.6;
     color: #1a3b5d;
 }
+
+/* error message */
+.error-message-report{ color: red; font-size: 20px; text-align: center;}

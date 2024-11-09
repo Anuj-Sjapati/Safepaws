@@ -13,7 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $username, $email, $phone, $password);
 
     if ($stmt->execute()) {
+        // set username and email in session
         $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
         echo "Sign-up successful!";     
     } else {
         echo "Error: " . $stmt->error;

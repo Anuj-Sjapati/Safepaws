@@ -41,7 +41,7 @@ document.getElementById('report-pet-form').addEventListener('submit', function(e
             document.getElementById('report-pet-form').reset();
             // Optionally, reset the photo input as well since .reset() doesn't work for file inputs
             document.getElementById('photo').value = "";
-            window.location.href = '#'; // Redirect to a thank you page or another page
+            window.location.href = 'report.php';// Redirect to a thank you page or another page
         } else {
             document.getElementById('error-message-report').innerText = data; // Display error message
         }

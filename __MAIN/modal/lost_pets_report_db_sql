@@ -9,3 +9,5 @@ CREATE TABLE reports (
     user_email VARCHAR(255) NOT NULL,
     photo_path VARCHAR(255) NOT NULL
 );
+
+ALTER TABLE reports ADD COLUMN approved BOOLEAN DEFAULT FALSE;

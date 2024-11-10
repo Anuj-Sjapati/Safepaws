@@ -14,6 +14,7 @@ include 'db_connect.php'; // Update this path if necessary
     <title>Lost Pets - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
+    <link rel="stylesheet" href="../CSS/lost.css"> <!--main  css-->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
     <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
@@ -66,6 +67,44 @@ include 'db_connect.php'; // Update this path if necessary
             </nav>
         </div>
     </header>
+
+    <!-- main section -->
+    <section class="lost-pets">
+        <h2>Lost Pets</h2>
+        <div class="pets-list">
+            <?php
+                $sql = "SELECT * FROM reports WHERE approved = TRUE";
+                $result = mysqli_query($conn, $sql);
+
+                if (!$result) {
+                    die("Database query failed: " . mysqli_error($conn));
+                }
+
+                // Loop through each approved report and display as a card
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $report_id = $row['id']; // Get the report ID for toggling
+                    echo "<div class='featured-item'>";
+                    echo "<img src='" . htmlspecialchars($row['photo_path']) . "' alt='" . htmlspecialchars($row['pet_name']) . "' class='pet-photo'>";
+                    echo "<p><strong>Name:</strong> " . htmlspecialchars($row['pet_name']) . "</p>";
+                    echo "<p><strong>Last Seen:</strong> " . htmlspecialchars($row['last_seen']) . "</p>";
+                    echo "<p><strong>Contact:</strong> " . htmlspecialchars($row['phone']) . "</p>";
+                    
+                    // Hidden details section to show more information
+                    echo "<div id='details-" . $report_id . "' class='pet-details' style='display:none;'>";
+                    echo "<p><strong>Type:</strong> " . htmlspecialchars($row['pet_type']) . "</p>";
+                    echo "<p><strong>Description:</strong> " . htmlspecialchars($row['description']) . "</p>";
+                    echo "<p><strong>Reporter:</strong> " . htmlspecialchars($row['name']) . "</p>";
+                    echo "</div>";
+
+                    // More info button with a unique ID based on the report ID
+                    echo "<button class='more-info-btn' id='more-info-btn-" . $report_id . "' onclick='toggleDetails($report_id)'>More Info</button>";
+                    echo "</div>";
+                }
+            ?>
+        </div>
+    </section>
+
+    
 
      <!-- footer section -->
      <footer>
@@ -156,6 +195,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
     <!-- Link to the external JavaScript file -->
-    <script src="../Js/ad.js"></script>
+    <script src="../Js/lost.js"></script>
 </body>
 </html>

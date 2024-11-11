@@ -106,7 +106,7 @@ include 'db_connect.php';
                         // echo "<td>" . htmlspecialchars($row['user_email']) . "</td>";
                         echo "<td>";
                         if ($row['approved']) {
-                            echo "<span>Approved</span>";
+                            echo "<span>Approved | </span>";
                         } else {
                             echo "<a href='approve_reports.php?id=" . $row['id'] . "' class='approve-button'>Approve</a> | ";
                         }

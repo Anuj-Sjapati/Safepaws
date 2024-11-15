@@ -30,6 +30,12 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         return;
     }
 
+    // Validate phone-number
+    if (!/^\d{10}$/.test(phone)) {
+        document.getElementById('password-error').innerText = "Phone number must be exactly 10 numeric characters.";
+        return;
+    }    
+
     // Prepare data for submission
     const formData = new FormData();
     formData.append('username', username);

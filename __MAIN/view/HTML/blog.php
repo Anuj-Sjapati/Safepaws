@@ -167,7 +167,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" minlength="10" maxlength="10" required>
                     </div>
                     <div>
                         <input type="password" id="password" name="upassword" placeholder="Password" required>
@@ -209,6 +209,8 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
         <script src="../Js/signin_login.js"></script>
     </div>
+
+
 
     <!-- Link to the external JavaScript file -->
     <script src="../Js/ad.js"></script>

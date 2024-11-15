@@ -149,7 +149,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" minlength="10" maxlength="10" required>
                     </div>
                     <div>
                         <input type="password" id="password" name="upassword" placeholder="Password" required>

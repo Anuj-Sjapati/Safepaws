@@ -108,7 +108,7 @@ include 'db_connect.php'; // Update this path if necessary
                     </div>
                     <div>
                         <label for="phone">Your Phone:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                        <input type="tel" id="phone" name="phone" minlength="10" maxlength="10" placeholder="Your Phone Number" required>
                     </div>
                     <div>
                         <label for="photo">Attach a Photo:</label>

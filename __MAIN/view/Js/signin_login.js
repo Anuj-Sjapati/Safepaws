@@ -12,7 +12,7 @@ document.addEventListener('keydown', (e) => {
 
 // Handle signup form submission with AJAX
 document.getElementById('signup-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault(); //stop the default behavior of browser to refresh when form subimtted 
 
     const username = document.getElementById('username').value.trim();
     const email = document.getElementById('email').value.trim();

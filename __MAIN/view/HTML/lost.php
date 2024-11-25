@@ -97,7 +97,10 @@ include 'db_connect.php'; // Update this path if necessary
                     echo "</div>";
 
                     // More info button with a unique ID based on the report ID
+                    echo "<div class='button-container'>";
                     echo "<button class='more-info-btn' id='more-info-btn-" . $report_id . "' onclick='toggleDetails($report_id)'>More Info</button>";
+                    echo "<button class='found-info-btn' id='found-info-btn-" . $report_id . "'>Found</button>";
+                    echo "</div>";
                     echo "</div>";
                 }
             ?>

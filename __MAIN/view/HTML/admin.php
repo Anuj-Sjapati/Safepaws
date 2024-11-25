@@ -53,7 +53,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <div class="user-info">
                             <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
                             
-                            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                            <?php if (isset($_SESSION['is_admin'])): ?>
                                 <a href="admin.php" class="admin-link">Admin Page</a>
                             <?php endif; ?>
 

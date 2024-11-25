@@ -79,7 +79,7 @@ include 'db_connect.php';
                     <th>Reporter Name</th>
                     <th>Contact Phone</th> 
                     <!-- <th>Users Email</th> email not shown -->
-                    <th>Actions</th>
+                    <th style='text-align: center;'>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -106,9 +106,14 @@ include 'db_connect.php';
                         // echo "<td>" . htmlspecialchars($row['user_email']) . "</td>";
                         echo "<td>";
                         if ($row['approved']) {
-                            echo "<span>Approved | </span>";
+                            echo "<span style='color:green;'>Approved | </span>";
                         } else {
                             echo "<a href='approve_reports.php?id=" . $row['id'] . "' class='approve-button'>Approve</a> | ";
+                        }
+                        if ($row['unapproved']) {
+                            echo "<span style='color:red;'>Unapproved | </span>";
+                        } else {
+                            echo "<a href='unapprove_reports.php?id=" . $row['id'] . "' class='approve-button'>Unapprove</a> | ";
                         }
                         echo "<a href='delete_report.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>";
                         echo "</td>";

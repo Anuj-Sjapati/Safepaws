@@ -80,7 +80,7 @@ include 'db_connect.php'; // Update this path if necessary
     
     <!-- features section -->
     <section class="features">
-        <h2>Our Key Features</h2>
+      <center><h2>Our Key Features</h2><center>
         <div class="feature-container">
         <div class="feature">
             <a href="report.php">

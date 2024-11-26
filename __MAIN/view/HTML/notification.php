@@ -11,7 +11,7 @@ include 'db_connect.php';
     <title>Reported Pets - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!-- nav css -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!-- footer css -->
-    <link rel="stylesheet" href="../CSS/report_info.css"> <!-- main css for reports -->
+    <link rel="stylesheet" href="../CSS/report_info.css"> <!-- main css for reports/notification -->
     <link rel="icon" type="image/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
@@ -72,65 +72,70 @@ include 'db_connect.php';
 
     <!-- Reported Pets Information Section -->
     <div class="report-info">
-        <h1>Reported Lost Pets</h1>
+        <h1>Notification</h1>
         <table class="reports-table">
             <thead>
                 <tr>
                     <th>Photo</th>
                     <th>Pet Type</th>
                     <th>Pet Name</th>
-                    <th>Description</th>
-                    <th>Last Seen</th>
                     <th>Reporter Name</th>
                     <th>Contact Phone</th> 
-                    <!-- <th>Users Email</th> email not shown -->
-                    <th style='text-align: center;'>Actions</th>
+                    <th style='text-align: center;'>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    // Fetch reported pet information from the database
-                    $sql = "SELECT * FROM reports"; 
-                    $result = mysqli_query($conn, $sql);
+                    // Ensure the user is logged in and the email is set in the session
+                    if (isset($_SESSION['email'])) {
+                        $loggedInEmail = mysqli_real_escape_string($conn, $_SESSION['email']); // Sanitize the input
 
-                    // Check if the query was successful
-                    if (!$result) {
-                        die("Database query failed: " . mysqli_error($conn));
-                    }
+                        // Fetch reported pet information for the logged-in user
+                        $sql = "SELECT * FROM reports WHERE user_email = '$loggedInEmail'";
+                        $result = mysqli_query($conn, $sql);
 
-                    // Loop through each report and display in the table
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr>";
-                        echo "<td><img src='" . htmlspecialchars($row['photo_path']) . "' alt='Pet Photo' class='pet-photo'></td>";
-                        echo "<td>" . htmlspecialchars($row['pet_type']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['pet_name']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['description']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['last_seen']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['name']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
-                        // echo "<td>" . htmlspecialchars($row['user_email']) . "</td>";
-                        echo "<td>";
-                        if ($row['approved']) {
-                            echo "<span style='color:green;'>Approved | </span>";
-                        } else {
-                            echo "<a href='approve_reports.php?id=" . $row['id'] . "' class='approve-button'>Approve</a> | ";
+                        // Check if the query was successful
+                        if (!$result) {
+                            die("Database query failed: " . mysqli_error($conn));
                         }
-                        if ($row['unapproved']) {
-                            echo "<span style='color:red;'>Unapproved | </span>";
+
+                        // Check if there are any reports for the user
+                        if (mysqli_num_rows($result) > 0) {
+                            // Loop through each report and display in the table
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td><img src='" . htmlspecialchars($row['photo_path']) . "' alt='Pet Photo' class='pet-photo'></td>";
+                                echo "<td>" . htmlspecialchars($row['pet_type']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['pet_name']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
+                                echo "<td>";
+                                if ($row['approved']) {
+                                    echo "<span style='color:green;'>Approved | </span>";
+                                    
+                                    if ($row['found']) {
+                                        echo "<span style='color:green;'>Founded</span>";
+                                    } else {
+                                        echo "<a href='found_report.php?id=" . $row['id'] . "' class='found-button'>Found?</a>";
+                                    }
+                                    
+                                } else if ($row['unapproved']) {
+                                    echo "<span style='color:red;'>Unapproved</span>";
+                                } else {
+                                    echo "<span> Pending </span>";
+                                }
+                                echo "</td>";
+                                echo "</tr>";
+                            }
                         } else {
-                            echo "<a href='unapprove_reports.php?id=" . $row['id'] . "' class='approve-button'>Unapprove</a> | ";
+                            echo "<tr><td colspan='8' style='text-align: center;'>No reports.</td></tr>";
                         }
-                        if ($row['found']) {
-                            echo "<span style='color:green;'>Found | </span>";
-                        } else {
-                            echo "<span style='color:green;'>Missing | </span>";
-                        }
-                        echo "<a href='delete_report.php?id=" . $row['id'] . "' class='delete-button' onclick='return confirmDelete();'>Delete</a>";
-                        echo "</td>";
-                        echo "</tr>";
+                    } else {
+                        echo "<tr><td colspan='8' style='text-align: center;'>You must be logged in to view reports.</td></tr>";
                     }
                 ?>
             </tbody>
+
         </table>
     </div>
 

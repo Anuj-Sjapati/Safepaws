@@ -80,26 +80,6 @@
     outline: none;
 }
 
-.found-info-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.found-info-btn:hover {
-    background-color: #45a049;
-}
-
-.found-info-btn:focus {
-    outline: none;
-}
-
-
 /* Details section */
 .pet-details p {
     font-size: 1rem;

@@ -52,16 +52,21 @@ include 'db_connect.php'; // Update this path if necessary
                         <div class="user-info">
                             <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
                             
-                            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
-                                <a href="admin.php" class="admin-link">Admin Page</a>
-                            <?php endif; ?>
+                            <!-- Notifications -->
+                            <div class="notification-nav">
+                            <a href="notification.php" class="notification-btn">
+                                <i class="fa-solid fa-bell"></i>
+                            </a>
+                            </div>
 
+                            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                                <a href="admin.php" class="admin-link"><i class="fa-solid fa-user"></i></a>
+                            <?php endif; ?>
                             <a href="logout.php" class="logout-button">Logout</a>
                         </div>
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                
                 <!-- SignUp / LogIn Button -->
                 <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
@@ -99,7 +104,6 @@ include 'db_connect.php'; // Update this path if necessary
                     // More info button with a unique ID based on the report ID
                     echo "<div class='button-container'>";
                     echo "<button class='more-info-btn' id='more-info-btn-" . $report_id . "' onclick='toggleDetails($report_id)'>More Info</button>";
-                    echo "<button class='found-info-btn' id='found-info-btn-" . $report_id . "'>Found</button>";
                     echo "</div>";
                     echo "</div>";
                 }

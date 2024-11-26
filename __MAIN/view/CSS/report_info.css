@@ -95,7 +95,7 @@ td a {
 }
 
 /* Button Styles */
-.approve-button, .delete-button {
+.approve-button, .delete-button, .found-button {
     padding: 6px 12px;
     font-size: 14px;
     border: none;
@@ -103,7 +103,7 @@ td a {
     cursor: pointer;
 }
 
-.approve-button {
+.approve-button, .found-button {
     background-color: #4CAF50;
     color: white;
     transition: background-color 0.3s ease;
@@ -112,6 +112,7 @@ td a {
 .approve-button:hover {
     background-color: #45a049;
 }
+.found-button:hover{ background-color: #45a049;}
 
 .delete-button {
     background-color: #ff6b6b;

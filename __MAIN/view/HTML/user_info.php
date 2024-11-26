@@ -49,7 +49,7 @@ include 'db_connect.php'; // Update this path if necessary
     
                     <!-- User Greeting / Logout Button -->
                     <?php if (isset($_SESSION['username'])): ?>
-                        <div class="user-info">
+                        <div class="user-info-nav">
                             <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
                             
                             <!-- Notifications -->

@@ -135,8 +135,8 @@ include 'db_connect.php'; // Update this path if necessary
                 <ul>
                     <li><a href="ad.php">Home</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="privacy.php">Privacy Policy</a></li>
-                    <li><a href="terms.php">Terms of Service</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
             </div>
             <div class="footer-social">

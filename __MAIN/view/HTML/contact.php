@@ -14,6 +14,7 @@ include 'db_connect.php'; // Update this path if necessary
     <title>Contact - SafePaws</title>
     <link rel="stylesheet" href="../CSS/nav.css"> <!--  nav css -->
     <link rel="stylesheet" href="../CSS/signin_login.css"> <!-- form css -->
+    <link rel="stylesheet" href="../CSS/contact.css"> <!-- Contact page CSS -->
     <link rel="stylesheet" href="../CSS/footer.css"> <!--footer css-->
     <link rel="icon" type="imge/jpg" href="../Images/icon.png"> <!-- favicons tab icon -->
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
@@ -72,8 +73,18 @@ include 'db_connect.php'; // Update this path if necessary
         </div>
     </header>
 
-<h1>Contact section will be added</h1>
-
+    <main>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>We're here to help! Reach out to us using the contact information below.</p>
+        <div class="contact-info">
+            <p><strong>Address:</strong> Kathmandu, Nepal</p>
+            <p><strong>Phone:</strong> (+977) 9812345678</p>
+            <p><strong>Email:</strong> <a href="mailto:info@safepaws.com">info@safepaws.com</a></p><br>
+          <center><b><P>No act of kindness is ever too small. Offering help to someone in need is one of the greatest gifts you can give—it has the power to change lives and create a lasting impact.</p><b></center>
+        </div>
+    </div>
+</main>
      <!-- footer section -->
      <footer>
         <div class="footer-content">
@@ -82,8 +93,8 @@ include 'db_connect.php'; // Update this path if necessary
                 <ul>
                     <li><a href="ad.php">Home</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
-                    <li><a href="privacy.php">Privacy Policy</a></li>
-                    <li><a href="terms.php">Terms of Service</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="Aboutus.php">About us</a></li>
                 </ul>
             </div>
             <div class="footer-social">

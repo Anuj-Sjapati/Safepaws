@@ -4,6 +4,7 @@
     padding: 20px;
     max-width: 1200px;
     text-align: center;
+    width: 100%;  /* Ensure it's fully responsive */
 }
 
 .lost-pets h2 {
@@ -14,27 +15,30 @@
 
 .pets-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures the items wrap correctly */
     gap: 20px;
     justify-items: center;
+    align-items: start;  /* Align items at the start of the grid cell */
 }
 
+/* Pet item styles */
 .featured-item {
     background-color: #fff5e6;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 300px;
+    max-width: 300px; /* Controls the maximum width of each item */
     text-align: left;
     display: flex;
-    flex-direction: column;  /* Allow button to align at the bottom */
-    justify-content: space-between;  /* Make space between elements */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px; /* Ensures consistent height for all pet items */
 }
 
 .featured-item img {
     width: 100%;
-    height: 200px;  /* Fixed height to ensure all images are the same size */
+    height: 200px; /* Fixed height for images */
     object-fit: cover;  /* Ensures the image covers the area without distorting */
     border-radius: 8px;
     margin-bottom: 15px;
@@ -52,12 +56,11 @@
 }
 
 /* Button styles */
-/* Flexbox container for buttons */
 .button-container {
     display: flex;
     gap: 10px; /* Space between buttons */
-    justify-content: center; /* Align buttons horizontally */
-    align-items: center; /* Align buttons vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Button styles */
@@ -80,13 +83,6 @@
     outline: none;
 }
 
-/* Details section */
-.pet-details p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
     .lost-pets h2 {
@@ -94,17 +90,17 @@
     }
 
     .pets-list {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
     }
 
     .featured-item {
-        max-width: 250px;
+        max-width: 250px; /* Decrease item width on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .pets-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Keeps grid responsive on mobile */
     }
 
     .featured-item {

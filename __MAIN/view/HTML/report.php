@@ -100,8 +100,8 @@ include 'db_connect.php'; // Update this path if necessary
                         <input type="text" id="pet-name" name="pet-name" placeholder="Pet's Name" required>
                     </div>
                     <div>
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" placeholder="Describe the pet (e.g., color, size, breed) *Mention the lost date*" rows="4" required></textarea>
+                        <label for="description">Description: *50 characters</label>
+                        <textarea id="description" name="description" placeholder="Describe the pet (e.g., color, size, breed) *Mention the lost date*" rows="4"  maxlength="50" required></textarea>
                     </div>
                     <div>
                         <label for="last-seen">Last Seen Location:</label>

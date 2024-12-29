@@ -1,0 +1,10 @@
+<html>
+<body>
+<form id="form"><input type="text" placeholder="Name"><input type="submit"></form>
+<p id="msg"></p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#form").submit(e => { e.preventDefault(); $("#msg").text("Form submitted."); });
+</script>
+</body>
+</html>

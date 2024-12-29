@@ -1,0 +1,11 @@
+<html>
+<body>
+<button id="btn">Hover/Click Me</button>
+<p id="msg"></p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#btn").hover(() => $("#msg").text("Hovered"), () => $("#msg").text(""))
+            .click(() => $("#msg").text("Clicked!"));
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For/In Loop</title>
+</head>
+<body>
+    <h3>For/In Loop Example</h3>
+    <p id="forInOutput"></p>
+    <script>
+        let person = {name: "John", age: 25, city: "New York"};
+        let output = "";
+        for (let key in person) {
+            output += `${key}: ${person[key]}<br>`;
+        }
+        document.getElementById("forInOutput").innerHTML = output;
+    </script>
+</body>
+</html>

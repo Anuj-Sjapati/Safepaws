@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For/Of Loop</title>
+</head>
+<body>
+    <h3>For/Of Loop Example</h3>
+    <p id="forOfOutput"></p>
+    <script>
+        let colors = ["Red", "Green", "Blue"];
+        let output = "";
+        for (let color of colors) {
+            output += color + "<br>";
+        }
+        document.getElementById("forOfOutput").innerHTML = output;
+    </script>
+</body>
+</html>

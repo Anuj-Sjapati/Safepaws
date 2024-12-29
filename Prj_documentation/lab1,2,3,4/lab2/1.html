@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+    <h1>String Methods in JavaScript</h1>
+    <div id="output"></div> <!-- A div to display the output -->
+    
+    <script>
+        let str = "Hello, World!"; // Initialize a string
+        let output = ""; // Initialize an empty string to store the output
+
+        // Add outputs to the variable using += for appending
+        output += "Original String: " + str + "<br>";
+        output += "Uppercase: " + str.toUpperCase() + "<br>";
+        output += "Lowercase: " + str.toLowerCase() + "<br>";
+        output += "Index of 'World': " + str.indexOf("World") + "<br>";
+        output += "Slice (0, 5): " + str.slice(0, 5) + "<br>";
+        output += "Replace 'World' with 'JavaScript': " + str.replace("World", "JavaScript") + "<br>";
+
+        // Display the output inside the div
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<html>
+<body>
+<input type="text" id="input" placeholder="Type something">
+<p id="msg"></p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $("#input").keypress(e => $("#msg").text("Key: " + e.key));
+</script>
+</body>
+</html>

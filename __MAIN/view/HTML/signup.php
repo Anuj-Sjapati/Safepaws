@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         // set username and email in session
+        //verification works
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $email;
         echo "Sign-up successful!";     

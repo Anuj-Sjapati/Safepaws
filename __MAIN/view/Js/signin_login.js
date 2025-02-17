@@ -1,5 +1,5 @@
 // Show the modal when the SignUp / LogIn button is clicked
-document.getElementById('sign-up-button').addEventListener('click', function() {
+document.getElementById('sign-up-button').addEventListener('click', function () {
     document.getElementById('signup-modal').classList.remove('hidden');
 });
 
@@ -11,7 +11,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Handle signup form submission with AJAX
-document.getElementById('signup-form').addEventListener('submit', function(event) {
+document.getElementById('signup-form').addEventListener('submit', function (event) {
     event.preventDefault(); //stop the default behavior of browser to refresh when form subimtted 
 
     const username = document.getElementById('username').value.trim();
@@ -34,7 +34,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     if (!/^\d{10}$/.test(phone)) {
         document.getElementById('password-error').innerText = "Phone number must be exactly 10 numeric characters.";
         return;
-    }    
+    }
 
     // Prepare data for submission
     const formData = new FormData();
@@ -48,25 +48,25 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         method: 'POST',
         body: formData
     })
-    .then(response => response.text())
-    .then(data => {
-        // Check for success message
-        if (data.includes('Sign-up successful!')) {
-            document.getElementById('password-error').innerText ="Sign-up successful!";
-            window.location.href = 'ad.php'; // Redirect on success
-        } else {
-            document.getElementById('password-error').innerText = data; // Display error message
-        }
-    })
-    .catch(error => {  
-        console.error('Error:', error);
-        document.getElementById('password-error').innerText = "An error occurred during sign-up. Please try again.";
-    });
+        .then(response => response.text())
+        .then(data => {
+
+            if (data.includes('Sign-up successful!')) {
+                document.getElementById('password-error').innerText = "Sign-up successful!";
+                window.location.href = 'ad.php';
+            } else {
+                document.getElementById('password-error').innerText = data;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('password-error').innerText = "An error occurred during sign-up. Please try again.";
+        });
 });
 
 
 // Handle login form submission with AJAX
-document.getElementById('login-form').addEventListener('submit', function(event) {
+document.getElementById('login-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const email = document.getElementById('login-email').value.trim();
@@ -86,25 +86,25 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         method: 'POST',
         body: formData
     })
-    .then(response => response.text())
-    .then(data => {
-        // Check for specific success messages to determine user type
-        if (data.includes("Redirecting to admin page")) {
-            document.getElementById('password-error-login').innerText ="Redirecting to admin page";
-            window.location.href = 'admin.php'; // Redirect to admin page for admin users
-        } else if (data.includes("Login successful!")) {
-            document.getElementById('password-error-login').innerText ="Login successful!";
-            window.location.href = 'ad.php'; // Redirect to home page for regular users
-        } else if (data.includes("Invalid email or password")) {
-            highlightPasswords();
-        } else {
-            document.getElementById('password-error').innerText = data; // Display any error message
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('password-error').innerText = "An error occurred during login. Please try again.";
-    });
+        .then(response => response.text())
+        .then(data => {
+            // Check for specific success messages to determine user type
+            if (data.includes("Redirecting to admin page")) {
+                document.getElementById('password-error-login').innerText = "Redirecting to admin page";
+                window.location.href = 'admin.php'; // Redirect 
+            } else if (data.includes("Login successful!")) {
+                document.getElementById('password-error-login').innerText = "Login successful!";
+                window.location.href = 'ad.php'; // Redirect 
+            } else if (data.includes("Invalid email or password")) {
+                highlightPasswords();
+            } else {
+                document.getElementById('password-error').innerText = data;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('password-error').innerText = "An error occurred during login. Please try again.";
+        });
 });
 
 
@@ -112,10 +112,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 function highlightPasswords() {
     document.getElementById('password').style.border = '2px solid red';
     document.getElementById('confirm-password').style.border = '2px solid red';
-    
+
     //for login
     document.getElementById('login-email').style.border = '2px solid red';
-    document.getElementById('login-password').style.border = '2px solid red'; 
+    document.getElementById('login-password').style.border = '2px solid red';
     document.getElementById('password-error-login').innerText = "Invalid email or password!!";
 }
 
@@ -131,14 +131,14 @@ function clearPasswordHighlight() {
 
 
 // Switch to the login form
-document.getElementById('switch-to-login').addEventListener('click', function(event) {
+document.getElementById('switch-to-login').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('signup-form-container').classList.add('hidden');
     document.getElementById('login-form-container').classList.remove('hidden');
 });
 
 // Switch to the signup form
-document.getElementById('switch-to-signup').addEventListener('click', function(event) {
+document.getElementById('switch-to-signup').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('login-form-container').classList.add('hidden');
     document.getElementById('signup-form-container').classList.remove('hidden');

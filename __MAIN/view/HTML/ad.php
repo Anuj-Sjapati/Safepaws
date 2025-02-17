@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -63,13 +63,13 @@ include 'db_connect.php'; // Update this path if necessary
                             <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
                                 <a href="admin.php" class="admin-link"><i class="fa-solid fa-user"></i></a>
                             <?php endif; ?>
+                            <!-- SignUp / LogIn Button -->
                             <a href="logout.php" class="logout-button">Logout</a>
                         </div>
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+                
             </nav>
         </div>
     </header>
@@ -181,7 +181,7 @@ include 'db_connect.php'; // Update this path if necessary
             </div>
             <div class="testimonial-item">
                 <q>SafePaws has everything you need, from adoption to grooming services!</q>
-                <p>- Pratima P.</p>
+                <p>- Pratima T.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="testimonial-item">
@@ -294,7 +294,7 @@ include 'db_connect.php'; // Update this path if necessary
         <script src="../Js/signin_login.js"></script>
     </div>
 
-    <!-- Link to the external JavaScript file -->
+    
     <script src="../Js/ad.js"></script>
 </body>
 </html>

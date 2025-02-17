@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +67,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+                
             </nav>
         </div>
     </header>
@@ -78,17 +77,17 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="checkup-list">
             <div class="checkup-item">
                 <h2>Central Referral Veterinary Hospital</h2>
-                <a href="https://crvh.gov.np/contacts" class="checkup-button">View</a> <!-- Link to the detail page -->
+                <a href="https://crvh.gov.np/contacts" class="checkup-button">View</a> 
             </div>
-            <div class="checkup-divider"></div> <!-- Divider line -->
+            <div class="checkup-divider"></div> 
             <div class="checkup-item">
                 <h2>City Veterinary Hospital</h2>
-                <a href="https://cityvetnepal.com/services.html" class="checkup-button">View</a> <!-- Link to the detail page -->
+                <a href="https://cityvetnepal.com/services.html" class="checkup-button">View</a> 
             </div>
-            <div class="checkup-divider"></div> <!-- Divider line -->
+            <div class="checkup-divider"></div> 
             <div class="checkup-item">
                 <h2>Animal Medical Centre Nepal</h2>
-                <a href="https://www.instagram.com/animalmedicalcentrenepal/?hl=en" class="checkup-button">View</a> <!-- Link to the detail page -->
+                <a href="https://www.instagram.com/animalmedicalcentrenepal/?hl=en" class="checkup-button">View</a> 
             </div>
         </div>
     </section>
@@ -184,7 +183,7 @@ include 'db_connect.php'; // Update this path if necessary
 
 
 
-    <!-- Link to the external JavaScript file -->
+    
     <script src="../Js/ad.js"></script>
 </body>
 </html>

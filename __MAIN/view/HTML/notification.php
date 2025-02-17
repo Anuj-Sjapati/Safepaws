@@ -64,8 +64,7 @@ include 'db_connect.php';
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+               
             </nav>
         </div>
     </header>
@@ -88,20 +87,20 @@ include 'db_connect.php';
                 <?php
                     // Ensure the user is logged in and the email is set in the session
                     if (isset($_SESSION['email'])) {
-                        $loggedInEmail = mysqli_real_escape_string($conn, $_SESSION['email']); // Sanitize the input
+                        $loggedInEmail = mysqli_real_escape_string($conn, $_SESSION['email']); 
 
-                        // Fetch reported pet information for the logged-in user
+                      
                         $sql = "SELECT * FROM reports WHERE user_email = '$loggedInEmail'";
                         $result = mysqli_query($conn, $sql);
 
-                        // Check if the query was successful
+                        
                         if (!$result) {
                             die("Database query failed: " . mysqli_error($conn));
                         }
 
                         // Check if there are any reports for the user
                         if (mysqli_num_rows($result) > 0) {
-                            // Loop through each report and display in the table
+                           
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td><img src='" . htmlspecialchars($row['photo_path']) . "' alt='Pet Photo' class='pet-photo'></td>";

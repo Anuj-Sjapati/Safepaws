@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +67,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+                
             </nav>
         </div>
     </header>
@@ -184,7 +183,7 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-    <!-- Link to the external JavaScript file -->
+    
     <script src="../Js/ad.js"></script>
 </body>
 </html>

@@ -1,32 +1,32 @@
 <?php
 session_start();
-// Include database connection file
+
 include 'db_connect.php';
 
 // Check if the request method is POST (form submitted)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Collect data from the form inputs
+    
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     // SQL statement to check if the user exists and retrieve the stored password
     $sql = "SELECT * FROM users WHERE email = ? AND password = ?";
     
-    // Prepare the SQL statement for execution
     $stmt = $conn->prepare($sql);
     
-    // Bind the form values to the SQL statement
     $stmt->bind_param("ss", $email, $password);
 
+<<<<<<< HEAD
+=======
     // Execute the statements
+>>>>>>> 340bdeadb6137e439815696bcbc9e4c282b92d83
     $stmt->execute();
     
-    // Get the result of the query
     $result = $stmt->get_result();
 
     // Check if any row matches (valid login)
     if ($result->num_rows > 0) {
-        // Fetch the user data
+        
         $user = $result->fetch_assoc();
 
         // Set the username and email in the session
@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Login successful!";  // Indicate successful login for a normal user
         }
     } else {
-        echo "Invalid email or password";  // Error message for failed login
+        echo "Invalid email or password";  
     }
 
-    // Close the statement and the connection
+   
     $stmt->close();
     $conn->close();
 }

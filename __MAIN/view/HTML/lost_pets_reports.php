@@ -2,12 +2,12 @@
 session_start();
 include 'db_connect.php'; 
 
-// Check if the user is logged in
+
 if (isset($_SESSION['email'])) {
     $userEmail = $_SESSION['email'];
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Gather form inputs
+        
         $petType = $_POST['pet-type'];
         $petName = $_POST['pet-name'];
         $description = $_POST['description'];
@@ -15,14 +15,14 @@ if (isset($_SESSION['email'])) {
         $userName = $_POST['name'];
         $userPhone = $_POST['phone'];
         
-        // Handle the file upload
+        
         // Handle the file upload
         $photoName = basename($_FILES['photo']['name']);
         $photoTmpName = $_FILES['photo']['tmp_name'];
         $uploadDir = '../../report_img/';
         $photoPath = $uploadDir . $photoName;
 
-        // Allowed file formats
+        
         $allowedExtensions = ['jpeg', 'png', 'jpg'];
         $photoExtension = strtolower(pathinfo($photoName, PATHINFO_EXTENSION));
 
@@ -30,15 +30,14 @@ if (isset($_SESSION['email'])) {
         if (in_array($photoExtension, $allowedExtensions)) {
             // Move the uploaded file to the target directory
             if (move_uploaded_file($photoTmpName, $photoPath)) {
-                // Prepare SQL query
+                
                 $sql = "INSERT INTO reports (pet_type, pet_name, description, last_seen, name, phone, user_email, photo_path) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 
-                // Prepare statement
+                
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("ssssssss", $petType, $petName, $description, $lastSeen, $userName, $userPhone, $userEmail, $photoPath);
 
-                // Execute statement and check success
                 if ($stmt->execute()) {
                     echo "Report submitted successfully!";
                 } else {

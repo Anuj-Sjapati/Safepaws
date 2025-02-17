@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "UPDATE users SET username='$username', email='$email', phone='$phone', password='$password' WHERE id='$userId'";
     if (mysqli_query($conn, $sql)) {
-        header("Location: user_info.php"); // Redirect back to admin page
+        header("Location: user_info.php"); 
     } else {
         echo "Error updating record: " . mysqli_error($conn);
     }

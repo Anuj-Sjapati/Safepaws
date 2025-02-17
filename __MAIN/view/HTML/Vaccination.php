@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +67,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+                
             </nav>
         </div>
     </header>
@@ -78,17 +77,17 @@ include 'db_connect.php'; // Update this path if necessary
     <div class="vaccination-list">
         <div class="vaccination-item">
             <h2>Clinic One</h2>
-            <a href="https://clinicone.com.np/rabies-vaccine-in-kathmandu-nepal/" class="vaccination-button">View</a> <!-- Link to the detail page -->
+            <a href="https://clinicone.com.np/rabies-vaccine-in-kathmandu-nepal/" class="vaccination-button">View</a> 
         </div>
-        <div class="vaccination-divider"></div> <!-- Divider line -->
+        <div class="vaccination-divider"></div> 
         <div class="vaccination-item">
             <h2>Central Referral Veterinary Hospital</h2>
-            <a href="https://crvh.gov.np/contacts" class="vaccination-button">View</a> <!-- Link to the detail page -->
+            <a href="https://crvh.gov.np/contacts" class="vaccination-button">View</a> 
         </div>
-        <div class="vaccination-divider"></div> <!-- Divider line -->
+        <div class="vaccination-divider"></div> 
         <div class="vaccination-item">
             <h2>SN PET ZONE</h2>
-            <a href="https://snpetzone.com/pet-store-in-lalitpur-pet-services/" class="vaccination-button">View</a> <!-- Link to the detail page -->
+            <a href="https://snpetzone.com/pet-store-in-lalitpur-pet-services/" class="vaccination-button">View</a> 
         </div>
     </div>
 </section>
@@ -181,7 +180,7 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-    <!-- Link to the external JavaScript file -->
+    
     <script src="../Js/ad.js"></script>
     </body>
     </html>

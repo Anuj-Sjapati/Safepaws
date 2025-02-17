@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
-// Include database connection
-include 'db_connect.php'; // Update this path if necessary
+
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -68,8 +68,7 @@ include 'db_connect.php'; // Update this path if necessary
                     <?php else: ?>
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
-                <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+                
             </nav>
         </div>
     </header>
@@ -80,38 +79,38 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="adoption-list">
             <!-- Example of a dog breed -->
             <div class="adoption-item">
-                <a href="https://communitydogwelfarecentre.org/sete-pawan/"> <!-- Link to the specific dog breed page -->
-                    <div class="item-container"> <!-- New container for image and text -->
+                <a href="https://communitydogwelfarecentre.org/sete-pawan/"> 
+                    <div class="item-container"> 
                         <img src="../Images/dog_breed1.jpg" alt="Dog Breed 1" />
                         <h2>Sete_pawan</h2>
                     </div>
                 </a>
             </div>
             <div class="adoption-item">
-                <a href="https://communitydogwelfarecentre.org/om/"> <!-- Link to another dog breed page -->
-                    <div class="item-container"> <!-- New container for image and text -->
+                <a href="https://communitydogwelfarecentre.org/om/"> 
+                    <div class="item-container"> 
                         <img src="../Images/dog_breed2.jpg" alt="Dog Breed 2" />
                         <h2>OM</h2>
                     </div>
                 </a>
             </div>
             <div class="adoption-item">
-                <a href="https://communitydogwelfarecentre.org/ram-hiti/"> <!-- Link to another dog breed page -->
-                    <div class="item-container"> <!-- New container for image and text -->
+                <a href="https://communitydogwelfarecentre.org/ram-hiti/"> 
+                    <div class="item-container"> 
                         <img src="../Images/dog_breed3.jpg" alt="Dog Breed 3" />
                         <h2>Ram-Hiti</h2>
                     </div>
                 </a>
             </div>
             <div class="adoption-item">
-                <a href="https://communitydogwelfarecentre.org/seti/"> <!-- Link to another dog breed page -->
-                    <div class="item-container"> <!-- New container for image and text -->
+                <a href="https://communitydogwelfarecentre.org/seti/"> 
+                    <div class="item-container"> 
                         <img src="../Images/dog_breed4.jpg" alt="Dog Breed 4" />
                         <h2>Seti</h2>
                     </div>
                 </a>
             </div>
-            <!-- Add more dog breeds similarly -->
+            <!-- Add more dog breeds -->
         </div>
     </section>
 
@@ -204,7 +203,7 @@ include 'db_connect.php'; // Update this path if necessary
 
 
 
-    <!-- Link to the external JavaScript file -->
+    
     <script src="../Js/ad.js"></script>
 </body>
 </html>

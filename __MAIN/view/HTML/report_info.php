@@ -17,7 +17,7 @@ include 'db_connect.php';
 </head>
 <body>
     
-    <!-- Header Section with updated Navigation -->
+
     <header>
         <div class="container">
             <nav>
@@ -65,7 +65,7 @@ include 'db_connect.php';
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+             
             </nav>
         </div>
     </header>
@@ -89,16 +89,16 @@ include 'db_connect.php';
             </thead>
             <tbody>
                 <?php
-                    // Fetch reported pet information from the database
+                  
                     $sql = "SELECT * FROM reports"; 
                     $result = mysqli_query($conn, $sql);
 
-                    // Check if the query was successful
+                 
                     if (!$result) {
                         die("Database query failed: " . mysqli_error($conn));
                     }
 
-                    // Loop through each report and display in the table
+                
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td><img src='" . htmlspecialchars($row['photo_path']) . "' alt='Pet Photo' class='pet-photo'></td>";

@@ -3,7 +3,7 @@
 session_start(); // Start the session
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ include 'db_connect.php'; // Update this path if necessary
 </head>
 <body>
     
-<!-- Header Section with updated Navigation -->
+
     <header>
         <div class="container">
             <nav>
@@ -70,7 +70,6 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
@@ -81,7 +80,7 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="adoption-list">
             <!-- Example of a cat breed -->
             <div class="adoption-item">
-                <a href="https://www.facebook.com/catmandulovers/"> <!-- Link to the specific cat breed page -->
+                <a href="https://www.facebook.com/catmandulovers/">
                     <div class="item-container">
                         <img src="../Images/cat_breed1.jpg" alt="Cat Breed 1" />
                         <h2>Catmandu Lovers</h2>
@@ -89,14 +88,14 @@ include 'db_connect.php'; // Update this path if necessary
                 </a>
             </div>
             <div class="adoption-item">
-                <a href="https://www.facebook.com/catsofnepal/"> <!-- Link to another cat breed page -->
+                <a href="https://www.facebook.com/catsofnepal/">
                     <div class="item-container">
                         <img src="../Images/cat_breed2.jpg" alt="Cat Breed 2" />
                         <h2>Cats Of Nepal</h2>
                     </div>
                 </a>
             </div>
-            <!-- Add more cat breeds similarly -->
+            <!-- Add more cat breeds if necessary  -->
         </div>
     </section>
 
@@ -190,7 +189,7 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-    <!-- Link to the external JavaScript file -->
+  
     <script src="../Js/ad.js"></script>
 </body>
 </html>

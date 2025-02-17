@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start();
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
 </head>
 <body>
     
-    <!-- Header Section with updated Navigation -->
+    
     <header>
         <div class="container">
             <nav>
@@ -68,7 +68,6 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
@@ -91,19 +90,19 @@ include 'db_connect.php'; // Update this path if necessary
                
             <tbody>
                 <?php
-                    // Fetch user information from the database
-                    $sql = "SELECT * FROM users"; // Change 'users' to your actual table name
+                    
+                    $sql = "SELECT * FROM users"; 
                     $result = mysqli_query($conn, $sql);
 
-                    // Check if the query was successful
+                   
                     if (!$result) {
                         die("Database query failed: " . mysqli_error($conn));
                     }
 
-                    // Loop through the results and display each row in the table
+                  
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>"; // Added 'id' for the ID column
+                        echo "<td>" . $row['id'] . "</td>"; 
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['email'] . "</td>";
                         echo "<td>" . $row['phone'] . "</td>";
@@ -139,7 +138,7 @@ include 'db_connect.php'; // Update this path if necessary
 
 <script>
 function confirmDelete() {
-    return confirm('Are you sure you want to delete this user?'); // Show confirmation dialog
+    return confirm('Are you sure you want to delete this user?');
 }
 </script>
 
@@ -152,7 +151,6 @@ function confirmDelete() {
         </div>
     </footer>
 
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/edit_user.js"></script>
 </body>
 </html>

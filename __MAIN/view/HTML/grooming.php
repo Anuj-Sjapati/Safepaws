@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start();
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <!-- Header Section with updated Navigation -->
+
    <header>
         <div class="container">
             <nav>
@@ -68,7 +68,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+      
             </nav>
         </div>
     </header>
@@ -78,17 +78,17 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="grooming-list">
             <div class="grooming-item">
                 <h2>Pet Mama</h2>
-                <a href="https://www.mypetmama.com/" class="grooming-button">View</a> <!-- Link to the detail page -->
+                <a href="https://www.mypetmama.com/" class="grooming-button">View</a>
             </div>
-            <div class="grooming-divider"></div> <!-- Divider line -->
+            <div class="grooming-divider"></div> 
             <div class="grooming-item">
                 <h2>Paws Nepal</h2>
-                <a href="https://pawsnepal.com/" class="grooming-button">View</a> <!-- Link to the detail page -->
+                <a href="https://pawsnepal.com/" class="grooming-button">View</a> 
             </div>
-            <div class="grooming-divider"></div> <!-- Divider line -->
+            <div class="grooming-divider"></div> 
             <div class="grooming-item">
                 <h2>Cage Free Dogs</h2>
-                <a href="https://cagefreedog.com.np/" class="grooming-button">View</a> <!-- Link to the detail page -->
+                <a href="https://cagefreedog.com.np/" class="grooming-button">View</a>
             </div>
         </div>
     </section>
@@ -184,8 +184,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/ad.js"></script>
 </body>
 </html>

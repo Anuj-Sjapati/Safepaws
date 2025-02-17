@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start(); 
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <!-- Header Section with updated Navigation -->
+  
    <header>
         <div class="container">
             <nav>
@@ -68,7 +68,6 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
@@ -78,17 +77,17 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="training-list">
             <div class="training-item">
                 <h2>Kathmandu Dog Training</h2>
-                <a href="https://www.kathmandudogtraining.com/?m=1" class="training-button">View</a> <!-- Link to the detail page -->
+                <a href="https://www.kathmandudogtraining.com/?m=1" class="training-button">View</a>
             </div>
-            <div class="training-divider"></div> <!-- Divider line -->
+            <div class="training-divider"></div>
             <div class="training-item">
                 <h2>Canine Companions</h2>
-                <a href="https://caninecompanions.com.np/" class="training-button">View</a> <!-- Link to the detail page -->
+                <a href="https://caninecompanions.com.np/" class="training-button">View</a> 
             </div>
-            <div class="training-divider"></div> <!-- Divider line -->
+            <div class="training-divider"></div>
             <div class="training-item">
                 <h2>Paws Nepal</h2>
-                <a href="https://pawsnepal.com/" class="training-button">View</a> <!-- Link to the detail page -->
+                <a href="https://pawsnepal.com/" class="training-button">View</a> 
             </div>
         </div>
     </section>
@@ -183,8 +182,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/ad.js"></script>
 </body>
 </html>

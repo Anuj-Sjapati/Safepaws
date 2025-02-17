@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start();
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Header Section with updated Navigation -->
+ 
     <header>
         <div class="container">
             <nav>
@@ -68,8 +68,6 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
-            </nav>
         </div>
     </header>
 
@@ -78,17 +76,17 @@ include 'db_connect.php'; // Update this path if necessary
         <div class="emergency-care-list">
             <div class="emergency-care-item">
                 <h2>City Veterinary Hospital</h2>
-                <a href="https://cityvetnepal.com/contact.html" class="emergency-care-button">View</a> <!-- Link to the detail page -->
+                <a href="https://cityvetnepal.com/contact.html" class="emergency-care-button">View</a> 
             </div>
-            <div class="emergency-care-divider"></div> <!-- Divider line -->
+            <div class="emergency-care-divider"></div> 
             <div class="emergency-care-item">
                 <h2>Advance Pet Hospital </h2>
-                <a href="https://www.facebook.com/people/Advance-Pet-Hospital/61552146885455/?mibextid=ZbWKwL" class="emergency-care-button">View</a> <!-- Link to the detail page -->
+                <a href="https://www.facebook.com/people/Advance-Pet-Hospital/61552146885455/?mibextid=ZbWKwL" class="emergency-care-button">View</a> 
             </div>
-            <div class="emergency-care-divider"></div> <!-- Divider line -->
+            <div class="emergency-care-divider"></div> 
             <div class="emergency-care-item">
                 <h2>SN PET ZONE</h2>
-                <a href="https://snpetzone.com/pet-store-in-lalitpur-pet-services/" class="emergency-care-button">View</a> <!-- Link to the detail page -->
+                <a href="https://snpetzone.com/pet-store-in-lalitpur-pet-services/" class="emergency-care-button">View</a> 
             </div>
         </div>
     </section>
@@ -182,8 +180,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/ad.js"></script>
 </body>
 </html>

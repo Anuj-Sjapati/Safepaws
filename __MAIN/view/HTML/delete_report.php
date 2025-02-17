@@ -1,19 +1,19 @@
 <?php
-include 'db_connect.php'; // Include your database connection
+include 'db_connect.php'; // Include database connection
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
-    $userId = $_GET['id']; // Get the user ID from the query string
+    $userId = $_GET['id']; 
 
-    // Prepare the SQL statement to delete the user
-    $sql = "DELETE FROM reports WHERE id = $userId"; // Change 'report id' to your actual table name
+   
+    $sql = "DELETE FROM reports WHERE id = $userId";
 
     // Execute the delete query
     if (mysqli_query($conn, $sql)) {
         header("Location: report_info.php"); 
     } else {
-        echo "Error deleting user: " . mysqli_error($conn); // Error message
+        echo "Error deleting user: " . mysqli_error($conn);
     }
 
-    mysqli_close($conn); // Close the database connection
+    mysqli_close($conn); 
 }
 ?>

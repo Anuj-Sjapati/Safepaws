@@ -1,9 +1,9 @@
 <?php
 
-session_start(); // Start the session
+session_start();
 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
     <script src="https://kit.fontawesome.com/cca1e4bf72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Header Section with updated Navigation -->
+  
     <header>
         <div class="container">
             <nav>
@@ -68,7 +68,7 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
+              
             </nav>
         </div>
     </header>
@@ -85,9 +85,9 @@ include 'db_connect.php'; // Update this path if necessary
                     die("Database query failed: " . mysqli_error($conn));
                 }
 
-                // Loop through each approved report and display as a card
+              
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $report_id = $row['id']; // Get the report ID for toggling
+                    $report_id = $row['id']; 
                     echo "<div class='featured-item'>";
                     echo "<img src='" . htmlspecialchars($row['photo_path']) . "' alt='" . htmlspecialchars($row['pet_name']) . "' class='pet-photo'>";
                     echo "<p><strong>Name:</strong> " . htmlspecialchars($row['pet_name']) . "</p>";
@@ -202,8 +202,6 @@ include 'db_connect.php'; // Update this path if necessary
     </div>
 
 
-
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/lost.js"></script>
 </body>
 </html>

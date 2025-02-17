@@ -1,8 +1,7 @@
 <?php
-session_start(); // Start the session (need to be included in every page!!)
-
+session_start(); 
 // Include database connection
-include 'db_connect.php'; // Update this path if necessary
+include 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +20,7 @@ include 'db_connect.php'; // Update this path if necessary
 <body>
     
     
-    <!-- Header Section with updated Navigation -->
+
     <header>
         <div class="container">
             <nav>
@@ -69,7 +68,6 @@ include 'db_connect.php'; // Update this path if necessary
                         <button id="sign-up-button">SignUp / LogIn</button>
                     <?php endif; ?>
                 <!-- SignUp / LogIn Button -->
-                <!-- <button id="sign-up-button">SignUp / LogIn</button> -->
             </nav>
         </div>
     </header>
@@ -100,7 +98,6 @@ include 'db_connect.php'; // Update this path if necessary
             <p>&copy; 2024 SafePaws. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Link to the external JavaScript file -->
     <script src="../Js/ad.js"></script>
 </body>
 </html>

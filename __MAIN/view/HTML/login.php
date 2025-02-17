@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Bind the form values to the SQL statement
     $stmt->bind_param("ss", $email, $password);
 
-    // Execute the statement
+    // Execute the statements
     $stmt->execute();
     
     // Get the result of the query

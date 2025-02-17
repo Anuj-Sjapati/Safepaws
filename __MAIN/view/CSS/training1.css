@@ -1,8 +1,8 @@
 .training-section {
     text-align: center;
     padding: 20px;
-    background-color: #fff5e6; /* Match background color with previous pages */
-    color: #333; /* Match text color with previous pages */
+    background-color: #fff5e6; 
+    color: #333; 
 }
 
 .training-list {
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Full width for each item */
+    width: 100%; 
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
@@ -26,16 +26,16 @@
 }
 
 .training-divider {
-    width: 100%; /* Full width for the divider */
+    width: 100%;
     height: 1px;
     background-color: #ddd; /* Color of the dividing line */
-    margin: 10px 0; /* Space above and below the line */
+    margin: 10px 0; 
 }
 
 .training-item h2 {
     margin: 0;
     color: #333;
-    flex: 1; /* Allow the heading to grow */
+    flex: 1; 
 }
 
 .training-button {
@@ -45,7 +45,7 @@
     background-color: #ff6b6b; /* Button color */
     color: white;
     cursor: pointer;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none; 
     transition: background-color 0.3s;
 }
 

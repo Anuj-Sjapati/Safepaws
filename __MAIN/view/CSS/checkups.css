@@ -1,8 +1,8 @@
 .checkup-section {
     text-align: center;
     padding: 20px;
-    background-color: #fff5e6; /* Match background color with previous pages */
-    color: #333; /* Match text color with previous pages */
+    background-color: #fff5e6;
+    color: #333; 
 }
 
 .checkup-list {
@@ -28,14 +28,14 @@
 .checkup-divider {
     width: 100%; /* Full width for the divider */
     height: 1px;
-    background-color: #ddd; /* Color of the dividing line */
-    margin: 10px 0; /* Space above and below the line */
+    background-color: #ddd; 
+    margin: 10px 0; 
 }
 
 .checkup-item h2 {
     margin: 0;
     color: #333;
-    flex: 1; /* Allow the heading to grow */
+    flex: 1;
 }
 
 /* Button styles */

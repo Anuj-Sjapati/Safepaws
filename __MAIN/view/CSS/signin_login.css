@@ -1,4 +1,3 @@
-/* Button of signup/login */
 button{ display: block;
     padding: 10px 20px;
     color: white;
@@ -9,7 +8,6 @@ button{ display: block;
     transition: background-color 0.3s;}
     button:hover{background-color: #ff4b4b; cursor: pointer;}
 
-    /* to hide the form popup */
     /* Modal Styles */
 .modal {
     display: flex;

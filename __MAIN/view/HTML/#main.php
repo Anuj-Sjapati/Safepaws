@@ -1,3 +1,3 @@
 <?php
-header("Location: ad.php"); //main page
+header("Location: view/HTML/ad.php");
 ?>

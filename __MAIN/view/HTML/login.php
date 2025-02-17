@@ -16,6 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $stmt->bind_param("ss", $email, $password);
 
+<<<<<<< HEAD
+=======
+    // Execute the statements
+>>>>>>> 340bdeadb6137e439815696bcbc9e4c282b92d83
     $stmt->execute();
     
     $result = $stmt->get_result();

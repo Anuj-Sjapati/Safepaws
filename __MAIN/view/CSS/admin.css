@@ -1,4 +1,3 @@
-/* Full height for html and body, Flex layout */
 html, body {
     height: 100%;
     margin: 0;
@@ -17,9 +16,9 @@ html, body {
     align-items: center;
 }
 
-/* Heading adjustment to move it up */
+
 .user-report-section h1 {
-    margin-bottom: 40px; /* Adjust this value to control spacing below the heading */
+    margin-bottom: 40px; 
     color: #1a3b5d;
 }
 
@@ -54,7 +53,7 @@ html, body {
 
 /* Remove underline for links in info boxes */
 .info-box a {
-    text-decoration: none; /* Removes underline */
+    text-decoration: none; 
     color: inherit; /* Inherit the color from .info-box h2 */
 }
 

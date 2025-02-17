@@ -1,4 +1,3 @@
-
 /* hero section top*/
 .hero {
     background-image: url('../Images/1st.jpeg');
@@ -6,7 +5,8 @@
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px; /* Added horizontal padding for smaller screens */
+    padding: 100px 20px;
+    /* Added horizontal padding for smaller screens */
 }
 
 .hero h1 {
@@ -27,7 +27,7 @@
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px; /* Added horizontal padding for smaller screens */
+    padding: 100px 20px;
 }
 
 .hero-bottom h1 {
@@ -44,48 +44,53 @@
 /* feature section */
 .feature {
     text-align: center;
-    flex: 1; /* Equal width for features */
-    min-width: 150px; /* Minimum width for smaller screens */
-    margin: 2rem; /* Add some margin for spacing */
+    flex: 1;
+    /* Equal width for features */
+    min-width: 150px;
+    /* Minimum width for smaller screens */
+    margin: 2rem;
     color: #1a3b5d;
 }
 
 .features {
-    display: flex; /* Ensure features are in a row */
-    flex-wrap: wrap; /* Wrap to next line on smaller screens */
-    justify-content: center; /* Center the features */
+    display: flex;
+    /* Ensure features are in a row */
+    flex-wrap: wrap;
+    /* Wrap to next line on smaller screens */
+    justify-content: center;
     padding: 50px 0px;
 }
 
 .features h2 {
     text-align: center;
-    font-size: 2.5rem; /* Increased font size for emphasis */
-    margin-bottom: 2rem auto; /* Centering with auto margins */
-    color: #1a3b5d; /* Color to match your brand */
-    max-width: 600px; /* Optional: set a max width for better readability */
+    font-size: 2.5rem;
+    margin-bottom: 2rem auto;
+    color: #1a3b5d;
+    max-width: 600px;
 }
 
 .feature img {
     width: 260px;
     height: 180px;
-    border-radius: 10px; /* Rounded corners for images */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow transition */
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature img:hover {
-    transform: scale(1.1); /* Scale up on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.feature:hover{
+.feature:hover {
     color: #ff6b6b;
 }
 
-.feature-container{
+.feature-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;}
+    flex-wrap: wrap;
+}
 
 
 /* How It Works Section */
@@ -116,7 +121,7 @@
     padding: 20px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
 }
 
@@ -142,7 +147,7 @@
 
 .testimonial {
     background-color: #ff6b6b;
-    padding: 50px 20px; /* Added horizontal padding */
+    padding: 50px 20px;
     text-align: center;
     color: #1a3b5d;
 }
@@ -152,37 +157,35 @@
 }
 
 .testimonial-item.active {
-    display: block; /* Show active testimonial */
+    display: block;
+    /* Show active testimonial */
 }
 
 .testimonial q {
     font-style: italic;
     font-size: 18px;
-    display: block; /* Added block display for better spacing */
-    margin: 20px 0; /* Margin around the quote */
+    display: block;
+    margin: 20px 0;
 }
 
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 36px; /* Adjusted for smaller size screen */    /*Don't know will work or not */
+        font-size: 36px;
+        /* Adjusted for smaller size screen */
+        /*Don't know will work or not */
     }
-    
+
     .hero p {
-        font-size: 16px; /* Adjust paragraph size for smaller screens */
+        font-size: 16px;
     }
 
 }
+
 /* General link styling to remove underline and change color */
 a {
     text-decoration: none;
-    color: inherit; /* Use the same color as surrounding text */
+    color: inherit;
+    /* Use the same color as surrounding text */
 }
-
-/* Change color on hover for a more interactive effect */
-/* a:hover {
-    color: #ff6b6b; /* Choose a color for the hover state 
-    text-decoration: none; /* No underline on hover either 
-} */
-

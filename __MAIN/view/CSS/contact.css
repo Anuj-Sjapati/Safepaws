@@ -1,6 +1,7 @@
 /* General Layout */
 body {
-    background-color: #FFF5E6; /* Maintain base background color */
+    background-color: #FFF5E6;
+    /* Maintain base background color */
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
@@ -20,13 +21,14 @@ main {
 
 .contact-container h1 {
     font-size: 36px;
-    color: #1a3b5d; /* Base color for SafePaws */
+    color: #1a3b5d;
     margin-bottom: 20px;
 }
 
 .contact-container p {
     font-size: 18px;
-    color: #333; /* Neutral text color */
+    color: #333;
+    /* Neutral text color */
     margin-bottom: 10px;
 }
 
@@ -36,16 +38,18 @@ main {
 
 .contact-info p {
     font-size: 18px;
-    color: #444; /* Slightly darker neutral color */
+    color: #444;
+    /* Slightly darker neutral color */
     margin-bottom: 10px;
 }
 
 .contact-info a {
-    color: #1a3b5d; /* Base SafePaws color for links */
+    color: #1a3b5d;
     text-decoration: none;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
-    color: #316FF6; /* Slightly brighter hover color */
+    color: #316FF6;
+    /* Slightly brighter hover color */
 }

@@ -1,4 +1,3 @@
-/* Styles for About Us page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f4ee;
@@ -13,27 +12,33 @@ h1 {
 }
 
 .about-us {
-    max-width: 800px; /* Adjust based on your layout */
-    margin: 0 auto; /* Centers the section */
-    padding: 20px; /* Add some padding */
-    text-align: left; /* Align text to the left */
+    max-width: 800px;
+    /* Adjust based on your layout */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
 }
 
 .founders {
-    display: flex; /* Align founders side by side */
-    justify-content: space-around; /* Space them evenly */
-    margin: 20px 0; /* Add margin above and below */
+    display: flex;
+    /* Align founders side by side */
+    justify-content: space-around;
+    /* Space them evenly */
+    margin: 20px 0;
+    /* Add margin above and below */
 }
 
 .founder {
-    max-width: 300px; /* Adjust width for individual founder */
-    text-align: center; /* Center text within the founder block */
+    max-width: 300px;
+    text-align: center;
 }
 
 .founder-image {
-    width: 100%; /* Responsive images */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Optional: Round images */
+    width: 100%;
+    /* Responsive images */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 50%;
 }
 
 h2 {
@@ -50,6 +55,8 @@ p {
 }
 
 /* Ensure footer text remains white */
-footer, footer p, footer .footer-contact a {
+footer,
+footer p,
+footer .footer-contact a {
     color: white !important;
 }

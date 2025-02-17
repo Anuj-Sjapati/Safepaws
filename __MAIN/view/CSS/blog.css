@@ -5,25 +5,28 @@ main {
     background-color: #f8f4ee;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers content horizontally */
+    align-items: center;
 }
 
 /* Centered content for blog entries */
 .centered-content {
-    max-width: 800px; /* Sets a maximum width for the blog entries */
-    width: 100%; /* Allows it to be responsive */
-    padding: 1rem; /* Adds padding around the entries */
-    background-color: #fff; /* Background color for contrast */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+    max-width: 800px;
+    /* Sets a maximum width for the blog entries */
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Blog entries styles */
 .blog-entries article {
-    background: transparent; /* Removes the background color */
-    border: none; /* Removes the border */
-    padding: 1.5rem 0; /* Vertical padding for articles */
-    margin: 1rem 0; /* Margin between articles */
+    background: transparent;
+    /* Removes the background color */
+    border: none;
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+    /* Margin between articles */
 }
 
 .blog-entries h2 {
@@ -39,33 +42,39 @@ main {
 
 /* Resource links section */
 .resource-links {
-    display: flex; /* Use flexbox for horizontal layout */
-    overflow-x: auto; /* Enable horizontal scrolling on small screens */
-    padding: 20px 0; /* Add some padding */
-    scroll-snap-type: x mandatory; /* Optional: Add snap effect for better UX */
+    display: flex;
+    /* Use flexbox for horizontal layout */
+    overflow-x: auto;
+    /* Enable horizontal scrolling on small screens */
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    /* Optional: Add snap effect for better UX */
 }
 
 /* Resource card styles */
 .resource-card {
-    flex: 0 0 200px; /* Fixed width for each card */
-    margin-right: 15px; /* Space between cards */
-    scroll-snap-align: start; /* Optional: Align items when scrolling */
-    border: 1px solid #ddd; /* Add border for cards */
-    border-radius: 8px; /* Rounded corners for cards */
-    background-color: #fff; /* White background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    flex: 0 0 200px;
+    margin-right: 15px;
+    scroll-snap-align: start;
+    /* Align items when scrolling */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .resource-card:hover {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Resource image styles */
 .resource-image {
-    width: 100%; /* Image takes full width of the card */
-    height: 150px; /* Fixed height for images */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    width: 100%;
+    /* Image takes full width of the card */
+    height: 150px;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0;
 }
 
 /* Heading and paragraph styles within resource cards */
@@ -88,24 +97,28 @@ main {
 
 /* Link styles */
 .resource-card a {
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Inherits the color of the parent element */
+    text-decoration: none;
+    color: inherit;
+    /* Inherits the color of the parent element */
 }
 
 /* Styles for larger screens */
 @media (min-width: 768px) {
     .resource-links {
-        overflow-x: visible; /* Disable horizontal scrolling on larger screens */
-        flex-wrap: wrap; /* Allow wrapping of items */
+        overflow-x: visible;
+        /* Disable horizontal scrolling on larger screens */
+        flex-wrap: wrap;
     }
 
     .resource-card {
-        flex: 0 0 calc(33.333% - 15px); /* 3 cards per row with margin */
-        margin-right: 15px; /* Space between cards */
-        margin-bottom: 20px; /* Space below cards */
+        flex: 0 0 calc(33.333% - 15px);
+        /* 3 cards per row with margin */
+        margin-right: 15px;
+        margin-bottom: 20px;
     }
 
     .resource-card:last-child {
-        margin-right: 0; /* Remove right margin for the last card */
+        margin-right: 0;
+        /* Remove right margin for the last card */
     }
 }
